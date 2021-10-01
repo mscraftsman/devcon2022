@@ -181,22 +181,17 @@
               </div>
             </div>
           </div>-->
-
+          <!--
           <div class="group speaker">
             <div class="title-package speaker">Speaker</div>
             <div class="funding">
-              <div class="item">
-                <a href="https://www.ceridian.com" target="_blank" rel="noopener noreferrer">
-                  <img src="/funding/ceridian.png" alt="Ceridian" />
-                </a>
-              </div>
               <div class="item">
                 <a href="https://ringier.com/" target="_blank" rel="noopener noreferrer">
                   <img src="/funding/ringier.png" alt="ringier" />
                 </a>
               </div>
             </div>
-          </div>
+          </div>-->
 
           <div class="group media">
             <div class="title-package media">Media Partner</div>
