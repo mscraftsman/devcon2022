@@ -109,11 +109,6 @@
                   <img src="/funding/nettobe.png" alt="NetToBe" />
                 </a>
               </div>
-              <div class="item">
-                <a href="https://www.spoonconsulting.com" target="_blank" rel="noopener noreferrer">
-                  <img src="/funding/spoon.png" alt="Spoon Consulting" />
-                </a>
-              </div>
             </div>
           </div>
 
@@ -175,17 +170,22 @@
               </div>
             </div>
           </div>
-          <!-- 
+
           <div class="group happy">
             <div class="title-package happy">Happy Hour Partner</div>
             <div class="funding">
+              <div class="item">
+                <a href="https://www.spoonconsulting.com" target="_blank" rel="noopener noreferrer">
+                  <img src="/funding/spoon.png" alt="Spoon Consulting" />
+                </a>
+              </div>
               <div class="item">
                 <a href="" target="_blank" rel="noopener noreferrer">
                   <img src="/funding/mscc.png" alt="MSCC" />
                 </a>
               </div>
             </div>
-          </div>-->
+          </div>
           <!--
           <div class="group speaker">
             <div class="title-package speaker">Speaker</div>
