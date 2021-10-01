@@ -83,6 +83,11 @@
                   <img src="/funding/synthesis.png" alt="Synthesis" />
                 </a>
               </div>
+              <div class="item">
+                <a href="https://www.ceridian.com" target="_blank" rel="noopener noreferrer">
+                  <img src="/funding/ceridian.png" alt="Ceridian" />
+                </a>
+              </div>
             </div>
           </div>
 
