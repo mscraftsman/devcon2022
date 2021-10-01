@@ -12,7 +12,7 @@ Use your best judgment, and feel free to propose changes to this document in a p
 
 # 1 Theme : Comics
 
-[!Developers Conference 2022](https://github.com/mscraftsman/devcon2022/blob/master/public/github_thumbnail.jpg?raw=true)
+![Developers Conference 2022](https://github.com/mscraftsman/devcon2022/blob/master/public/github_thumbnail.jpg?raw=true)
 
 # 2 Read the file below for how to contribute to this website.
 
