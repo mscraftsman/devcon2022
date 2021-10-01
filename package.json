@@ -1,0 +1,55 @@
+{
+  "name": "devcon2021",
+  "description": "Website of Developers Conference 2021 in Mauritius",
+  "demo": "https://conference.mscc.mu/",
+  "version": "0.1.1",
+  "license": "MIT",
+  "author": {
+    "name": "Mauritius Software Craftsmanship Community",
+    "email": "hello@mscc.mu",
+    "url": "https://www.mscc.mu"
+  },
+  "contributors": [
+    "https://github.com/mscraftsman/devcon2021-web/graphs/contributors"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mscraftsman/devcon2021-web.git"
+  },
+  "bugs": "https://github.com/mscraftsman/devcon2021-web/issues",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build --dest dist",
+    "lint": "vue-cli-service lint",
+    "ghbuild": "NODE_ENV=ghpages vue-cli-service build --dest docs"
+  },
+  "dependencies": {
+    "core-js": "^3.8.2",
+    "normalize.css": "^8.0.1",
+    "svg-to-vue-component": "^0.3.8",
+    "v-tooltip": "^2.1.2",
+    "vue": "^2.6.12",
+    "vue-css-grid": "^1.0.1",
+    "vue-js-modal": "^2.0.0-rc.6",
+    "vue-masonry-css": "^1.0.3",
+    "vue-router": "^3.4.9",
+    "vuex": "^3.6.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.4.6",
+    "@vue/cli-plugin-eslint": "^3.1.1",
+    "@vue/cli-plugin-router": "^4.4.6",
+    "@vue/cli-plugin-vuex": "^4.4.6",
+    "@vue/cli-service": "^3.12.1",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^6.2.2",
+    "highlight.js": ">=10.4.1",
+    "node-sass": "^6.0.1",
+    "prettier": "^1.19.1",
+    "sass-loader": "^10",
+    "vue-template-compiler": "^2.6.12"
+  }
+}

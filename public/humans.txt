@@ -1,0 +1,21 @@
+﻿/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
+/* TEAM */
+  Initiator: Mauritius Software Craftsmanship Community
+  Site: https://www.mscc.mu/
+  Source: https://github.com/mscraftsman/devcon2021-web
+  Twitter: @MSCraftsman
+  Location: Mauritius
+
+/* THANKS (in alphabetical order) */
+  Jochen Kirstätter - https://jochen.kirstaetter.name/
+  Marine Ng Tat Mew - https://twitter.com/JadeMarineNg
+  Tejas Pagooah - https://www.graphicstemple.io/
+  Cedric Poilly - https://cedpoilly.me/
+  Sandeep Ramgolam - https://sandeep.ramgolam.com/
+  
+/* SITE */
+  Standards: HTML5, CSS3, SCSS
+  Components: Vue.js, Nuxt.js, CSS Grid
