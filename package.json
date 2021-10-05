@@ -1,8 +1,8 @@
 {
-  "name": "devcon2021",
-  "description": "Website of Developers Conference 2021 in Mauritius",
+  "name": "devcon2022",
+  "description": "Website of Developers Conference 2022 in Mauritius",
   "demo": "https://conference.mscc.mu/",
-  "version": "0.1.1",
+  "version": "0.0.2",
   "license": "MIT",
   "author": {
     "name": "Mauritius Software Craftsmanship Community",
@@ -10,13 +10,13 @@
     "url": "https://www.mscc.mu"
   },
   "contributors": [
-    "https://github.com/mscraftsman/devcon2021-web/graphs/contributors"
+    "https://github.com/mscraftsman/devcon2022/graphs/contributors"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/mscraftsman/devcon2021-web.git"
+    "url": "https://github.com/mscraftsman/devcon2022.git"
   },
-  "bugs": "https://github.com/mscraftsman/devcon2021-web/issues",
+  "bugs": "https://github.com/mscraftsman/devcon2022/issues",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --dest dist",

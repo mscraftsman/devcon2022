@@ -431,7 +431,7 @@ export default {
     },
     isKeynote(programme) {
       if (
-        programme.startsAt == "2021-09-09T09:00:00" &&
+        programme.startsAt == "2022-02-17T09:00:00" &&
         programme.roomId == "12900"
       ) {
         return "keynote";

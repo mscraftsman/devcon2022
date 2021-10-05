@@ -7,7 +7,7 @@
       </svg>
     </div>
     <div class="image">
-      <img src="/intro.png" alt="Developers Conference 2021 in Mauritius" />
+      <img src="/intro.png" alt="Developers Conference 2022 in Mauritius" />
     </div>
   </div>
 </template>
