@@ -58,9 +58,9 @@
                   <img src="/funding/sd-worx.png" alt="SD Worx" />
                 </a>
               </div>
-              <div class="item">
-                <a href="https://teamonite.mu" target="_blank" rel="noopener noreferrer">
-                  <img src="/funding/teamonite.png" alt="Teamonite.mu" />
+              <div class="item logo--rtknits">
+                <a href="https://rtknits.com/" target="_blank" rel="noopener noreferrer">
+                  <img src="/funding/rtknits.png" alt="R Knits" />
                 </a>
               </div>
               <div class="item">
@@ -73,13 +73,13 @@
                   <img src="/funding/event-store.png" alt="Event Store" />
                 </a>
               </div>
-              <div class="item">
+              <div class="item logo--iqera">
                 <a href="https://www.iqera.com" target="_blank" rel="noopener noreferrer">
                   <img src="/funding/iqera.png" alt="iQera" />
                 </a>
               </div>
               <div class="item">
-                <a href="www.synthesis.co.za" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.synthesis.co.za" target="_blank" rel="noopener noreferrer">
                   <img src="/funding/synthesis.png" alt="Synthesis" />
                 </a>
               </div>
@@ -148,7 +148,7 @@
                   <img src="/funding/ncb.png" alt="National Computer Board" />
                 </a>
               </div>
-              <div class="item">
+              <div class="item logo--astek">
                 <a href="https://www.astek.mu/en/" target="_blank" rel="noopener noreferrer">
                   <img src="/funding/astek.png" alt="Astek Mauritius" />
                 </a>
@@ -158,12 +158,12 @@
                   <img src="/funding/ios.png" alt="IOS Indian Ocean Software Ltd" />
                 </a>
               </div>
-              <div class="item">
+              <div class="item logo--frci">
                 <a href="https://www.frci.net" target="_blank" rel="noopener noreferrer">
                   <img src="/funding/frci.png" alt="FRCI" />
                 </a>
               </div>
-              <div class="item">
+              <div class="item logo--gt">
                 <a href="https://www.graphicstemple.io/" target="_blank" rel="noopener noreferrer">
                   <img src="/funding/gt.png" alt="Graphics Temple" />
                 </a>
@@ -405,8 +405,9 @@ export default {};
       .funding {
         .item {
           width: 22%;
+
           img {
-            width: 85%;
+            width: 83%;
           }
         }
       }
@@ -511,6 +512,34 @@ export default {};
         &.logo--uniciti {
           img {
             max-height: 70px;
+            width: auto;
+          }
+        }
+
+        &.logo--rtknits {
+          img {
+            max-height: 65px;
+            width: auto;
+          }
+        }
+
+        &.logo--iqera {
+          img {
+            max-height: 100px;
+            width: auto;
+          }
+        }
+
+        &.logo--astek {
+          img {
+            max-height: 100px;
+            width: auto;
+          }
+        }
+
+        &.logo--gt, &.logo--frci {
+          img {
+            max-height: 80px;
             width: auto;
           }
         }
