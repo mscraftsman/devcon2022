@@ -63,7 +63,7 @@
                   <img src="/funding/rtknits.png" alt="R Knits" />
                 </a>
               </div>
-              <div class="item">
+              <div class="item logo--9thbit">
                 <a href="https://www.9thbit.co.za" target="_blank" rel="noopener noreferrer">
                   <img src="/funding/9thbit.png" alt="9th Bit" />
                 </a>
@@ -179,7 +179,7 @@
                   <img src="/funding/spoon.png" alt="Spoon Consulting" />
                 </a>
               </div>
-              <div class="item">
+              <div class="item logo--mscc">
                 <a href="https://www.mscc.mu" target="_blank" rel="noopener noreferrer">
                   <img src="/funding/mscc.png" alt="MSCC" />
                 </a>
@@ -437,7 +437,7 @@ export default {};
         .item {
           width: 20%;
           img {
-            width: 75%;
+            width: 80%;
           }
         }
       }
@@ -468,7 +468,7 @@ export default {};
         margin-bottom: var(--gutter);
 
         img {
-          width: 70%;
+          width: 75%;
           transition: all 0.2s ease-in-out;
 
           &:hover {
@@ -498,7 +498,7 @@ export default {};
 
         &.logo--swan {
           img {
-            width: 75%;
+            width: 78%;
           }
         }
 
@@ -518,19 +518,33 @@ export default {};
 
         &.logo--rtknits {
           img {
-            max-height: 65px;
+            max-height: 70px;
             width: auto;
           }
         }
 
         &.logo--iqera {
           img {
+            // max-height: 100px;
+            // width: auto;
+          }
+        }
+
+        &.logo--astek {
+          img {
+            // max-height: 100px;
+            // width: auto;
+          }
+        }
+
+        &.logo--mscc {
+          img {
             max-height: 100px;
             width: auto;
           }
         }
 
-        &.logo--astek {
+        &.logo--9thbit {
           img {
             max-height: 100px;
             width: auto;
@@ -539,8 +553,8 @@ export default {};
 
         &.logo--gt, &.logo--frci {
           img {
-            max-height: 80px;
-            width: auto;
+            // max-height: 80px;
+            // width: auto;
           }
         }
       }
