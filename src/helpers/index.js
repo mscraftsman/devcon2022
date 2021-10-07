@@ -8,12 +8,12 @@ export function extractData(entries) {
 }
 
 function extractObject(entry) {
-  const fieldNameList = Object.keys(entry).filter((fieldName) =>
+  const fieldNameList = Object.keys(entry).filter(fieldName =>
     fieldName.includes("gsx$")
   );
 
   const formattedObjet = {};
-  fieldNameList.forEach((fieldName) => {
+  fieldNameList.forEach(fieldName => {
     const trimmedName = fieldName.replace("gsx$", "");
     formattedObjet[trimmedName] = entry[fieldName][`$t`];
   });
@@ -44,7 +44,7 @@ export const timeSafe = function(date) {
   let x = date
     .split("T")[1]
     .split(":")
-    .map((r) => parseInt(r, 10));
+    .map(r => parseInt(r, 10));
   let y =
     (x[0] < 12 ? "AM" : "PM") +
     x[0] +
@@ -102,7 +102,7 @@ export function sortBy(list, rules) {
 
   const entries = Object.entries(list);
 
-  const rulesMap = entries.map((entry) => {
+  const rulesMap = entries.map(entry => {
     const [label, group] = entry;
     const order = rules[label];
     return { label, group, order };

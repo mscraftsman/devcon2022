@@ -9,12 +9,12 @@ Vue.use(VModal);
 import VTooltip from "v-tooltip";
 Vue.use(VTooltip);
 
-import './assets/tailwind.css'
+import "./assets/tailwind.css";
 
 Vue.config.productionTip = false;
 
 new Vue({
   router,
   store,
-  render: (h) => h(App),
+  render: h => h(App)
 }).$mount("#app");

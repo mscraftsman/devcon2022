@@ -1,8 +1,17 @@
 <template>
   <footer class="global__footer">
     <div class="slanted__svg">
-      <svg data-v-71f627fa viewBox="0 0 100 100" preserveAspectRatio="none" class="slanted">
-        <polygon data-v-71f627fa points="0,0 100,100 100,100, 0,100" pointer-events="none" />
+      <svg
+        data-v-71f627fa
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+        class="slanted"
+      >
+        <polygon
+          data-v-71f627fa
+          points="0,0 100,100 100,100, 0,100"
+          pointer-events="none"
+        />
       </svg>
       <img class="building" src="/buildings.png" alt />
     </div>
@@ -11,7 +20,9 @@
         <div class="footer__content">
           <div class="top__wrapper">
             <div class="image">
-              <a href="https://mscc.mu"><img src="/mscc-logo-inverted.svg" alt="MSCC" /></a>
+              <a href="https://mscc.mu"
+                ><img src="/mscc-logo-inverted.svg" alt="MSCC"
+              /></a>
               <div class="mscc">Mauritius Software Craftsmanship Community</div>
             </div>
             <div class="social">
@@ -24,7 +35,10 @@
               <a href="https://twitter.com/mscraftsman" class="social__icon">
                 <img src="/icon/twitter.svg" alt="MSCC on Twitter" />
               </a>
-              <a href="https://www.linkedin.com/groups/5033639" class="social__icon">
+              <a
+                href="https://www.linkedin.com/groups/5033639"
+                class="social__icon"
+              >
                 <img src="/icon/linkedin.svg" alt="MSCC on LinkedIn" />
               </a>
               <a href="https://github.com/mscraftsman" class="social__icon">
@@ -35,7 +49,9 @@
           <div class="bottom__wrapper">
             <ul>
               <li>
-                <router-link :to="{ name: 'Code' }">Code of Conduct</router-link>
+                <router-link :to="{ name: 'Code' }"
+                  >Code of Conduct</router-link
+                >
               </li>
               <!-- <li>
                 <a href="https://bit.ly/RegDevCon" target="_blank" rel="noopener noreferrer" class="header__button">Register</a>

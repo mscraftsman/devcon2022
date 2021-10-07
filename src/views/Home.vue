@@ -23,11 +23,10 @@ export default {
     // IntroComponent,
     IntroAnimationComponent,
     FundingComponent,
-    TextComponent,
+    TextComponent
     // ScheduleComponent,
     // RegisterComponent
     // SpeakersComponent
   }
-}
-
+};
 </script>

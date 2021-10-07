@@ -9,21 +9,27 @@
 
         <div class="selection__day">
           <div class="block">
-            <input type="radio" id="day-1" value="day-1" checked v-model="day">
+            <input
+              type="radio"
+              id="day-1"
+              value="day-1"
+              checked
+              v-model="day"
+            />
             <label for="day-1">Day 1</label>
           </div>
           <div class="block">
-            <input type="radio" id="day-2" value="day-2" v-model="day">
+            <input type="radio" id="day-2" value="day-2" v-model="day" />
             <label for="day-2">Day 2</label>
           </div>
           <div class="block">
-            <input type="radio" id="day-3" value="day-3" v-model="day">
+            <input type="radio" id="day-3" value="day-3" v-model="day" />
             <label for="day-3">Day 3</label>
           </div>
         </div>
 
         <!-- <img class="schedule-wf" src="/schedule.jpg" alt /> -->
-        
+
         <div class="day-1 day">
           <div class="time__column">
             <div class="time__slot">
@@ -66,7 +72,7 @@
                 </div>
                 <div class="author__information">
                   <div class="image">
-                    <img src="/profiles/image.jpeg" alt="">
+                    <img src="/profiles/image.jpeg" alt="" />
                   </div>
                   <div class="info">Nirvan Pagooah</div>
                 </div>
@@ -83,10 +89,10 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-      day: 'day-1'
-    }
+      day: "day-1"
+    };
   }
 };
 </script>
@@ -203,7 +209,6 @@ export default {
       // &:nth-of-type(3n+0) {
       //   background: green;
       // }
-
 
       span {
         transform: rotate(-90deg);

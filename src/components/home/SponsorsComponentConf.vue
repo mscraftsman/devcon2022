@@ -7,7 +7,7 @@
         <h2 class="title">Sponsorship</h2>
         <div class="content">
           <p>
-           Text coming up
+            Text coming up
           </p>
         </div>
       </div>

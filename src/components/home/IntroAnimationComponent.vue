@@ -1,9 +1,7 @@
 <template>
   <div class="flex items-center justify-center h-screen landing-section">
     <div class="text-box">
-      <div
-        class="meta-title"
-      >
+      <div class="meta-title">
         <div class="meta-title__location">Caudan Arts Centre</div>
         <div class="meta-title__period font-black">17 - 19 February 2022</div>
       </div>
@@ -37,7 +35,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -61,27 +58,27 @@ export default {
 }
 
 .min-h-screen {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
 .snap-child {
-    scroll-snap-align: start;
+  scroll-snap-align: start;
 }
 
 .h-screen {
-    height: 100vh;
+  height: 100vh;
 }
 
 .justify-center {
-    justify-content: center;
+  justify-content: center;
 }
 
 .items-center {
-    align-items: center;
+  align-items: center;
 }
 
 .flex {
-    display: flex;
+  display: flex;
 }
 
 .building-rotation {
@@ -137,7 +134,6 @@ export default {
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 10px;
-  
 }
 .meta-title__sub {
   --landing-title-sub-fs: 2vw;
@@ -163,10 +159,9 @@ export default {
   margin-top: var(--margin);
 
   &:hover {
-    background: #E94D4D;
+    background: #e94d4d;
     color: white;
   }
-
 }
 @media (min-width: 425px) {
   .title {
@@ -261,7 +256,6 @@ export default {
     --font-size: 25px;
     --width: 180px;
     --margin: 15px;
-
   }
 }
 @media (min-width: 1000px) {

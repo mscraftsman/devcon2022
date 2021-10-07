@@ -21,13 +21,14 @@
           <!-- <router-link :to="{ name: 'Agenda' }" class="header__button light">Agenda</router-link>
           <router-link :to="{ name: 'Community' }" class="header__button light">Community</router-link>
           <router-link :to="{ name: 'Extras' }" class="header__button light">Extras</router-link>
-           --> 
-           <a
+           -->
+          <a
             href="https://drive.google.com/file/d/1fLhSAG_w5EpcKA_d6MpHgkLuWBCr9ArD/view"
             target="_blank"
             rel="noopener noreferrer"
             class="header__button light"
-          >Become a Sponsor</a>
+            >Become a Sponsor</a
+          >
         </div>
       </div>
     </div>
@@ -88,7 +89,7 @@ export default {};
 
       &.mobile {
         display: none;
-        
+
         .year {
           display: block;
         }
