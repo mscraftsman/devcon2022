@@ -164,6 +164,15 @@
                   <img src="/funding/nettobe.png" alt="NetToBe" />
                 </a>
               </div>
+              <div class="item">
+                <a
+                  href="https://www.prodigious.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/funding/prodigious.png" alt="Prodigious" />
+                </a>
+              </div>
             </div>
           </div>
 
@@ -239,6 +248,24 @@
                   rel="noopener noreferrer"
                 >
                   <img src="/funding/frci.png" alt="FRCI" />
+                </a>
+              </div>
+              <div class="item">
+                <a
+                  href="https://www.elca.ch/en/elca-mauritius"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/funding/elca.png" alt="ELCA" />
+                </a>
+              </div>
+              <div class="item">
+                <a
+                  href="https://serviqual.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/funding/serviqual.png" alt="Serviqual" />
                 </a>
               </div>
               <div class="item logo--gt">
@@ -522,7 +549,7 @@ export default {};
         .item {
           width: 20%;
           img {
-            width: 93%;
+            width: 100%;
           }
         }
       }
