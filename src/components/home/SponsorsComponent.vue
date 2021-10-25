@@ -211,13 +211,13 @@
                   <img src="/funding/aerow.png" alt="Aerow ECM" />
                 </a>
               </div>
-              <div class="item">
+              <div class="item logo--serviqual">
                 <a
-                  href="http://www.ncb.mu"
+                  href="https://serviqual.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="/funding/ncb.png" alt="National Computer Board" />
+                  <img src="/funding/serviqual.png" alt="Serviqual" />
                 </a>
               </div>
               <div class="item logo--astek">
@@ -261,11 +261,11 @@
               </div>
               <div class="item">
                 <a
-                  href="https://serviqual.com/"
+                  href="http://www.ncb.mu"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="/funding/serviqual.png" alt="Serviqual" />
+                  <img src="/funding/ncb.png" alt="National Computer Board" />
                 </a>
               </div>
               <div class="item logo--gt">
@@ -548,6 +548,12 @@ export default {};
       .funding {
         .item {
           width: 20%;
+          margin-right: 40px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
           img {
             width: 100%;
           }
@@ -680,6 +686,13 @@ export default {};
           img {
             max-height: 100px;
             width: auto;
+          }
+        }
+
+        &.logo--serviqual {
+          img {
+            // max-height: 130px;
+            width: 100%;
           }
         }
 
