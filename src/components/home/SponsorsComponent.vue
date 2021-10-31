@@ -280,6 +280,17 @@
             </div>
           </div>
 
+          <div class="group speaker">
+            <div class="title-package speaker">Speaker</div>
+            <div class="funding">
+              <div class="item logo--iqera">
+                <a href="https://www.iqera.com/" target="_blank" rel="noopener noreferrer">
+                  <img src="/funding/iqera.png" alt="ringier" />
+                </a>
+              </div>
+            </div>
+          </div>
+
           <div class="group happy">
             <div class="title-package happy">Happy Hour Partner</div>
             <div class="funding">
@@ -303,17 +314,7 @@
               </div>
             </div>
           </div>
-          <!--
-          <div class="group speaker">
-            <div class="title-package speaker">Speaker</div>
-            <div class="funding">
-              <div class="item">
-                <a href="https://ringier.com/" target="_blank" rel="noopener noreferrer">
-                  <img src="/funding/ringier.png" alt="ringier" />
-                </a>
-              </div>
-            </div>
-          </div>-->
+
 
           <div class="group media">
             <div class="title-package media">Media Partner</div>
@@ -682,6 +683,13 @@ export default {};
           }
         }
 
+        &.logo--iqera {
+          img {
+            max-height: 100px;
+            width: auto;
+          }
+        }
+
         &.logo--9thbit {
           img {
             max-height: 100px;
@@ -802,6 +810,8 @@ export default {};
           }
         }
       }
+
+
     }
   }
 }
@@ -833,9 +843,29 @@ export default {};
             }
           }
 
+          &.logo--uniciti {
+            img {
+              height: 50px;
+              width: auto;
+            }
+          }
+
+          &.logo--mscc {
+            img {
+              height: 50px;
+            }
+          }
+
           &.logo--ictio {
             img {
               height: 50px;
+            }
+          }
+
+          &.logo--iqera {
+            img {
+              height: 50px;
+              width: auto;
             }
           }
         }
