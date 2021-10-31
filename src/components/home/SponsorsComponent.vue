@@ -281,7 +281,7 @@
           </div>
 
           <div class="group speaker">
-            <div class="title-package speaker">Speaker</div>
+            <div class="title-package speaker">Speaker Sponsor</div>
             <div class="funding">
               <div class="item logo--iqera">
                 <a href="https://www.iqera.com/" target="_blank" rel="noopener noreferrer">
