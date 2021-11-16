@@ -53,6 +53,11 @@
                   >Code of Conduct</router-link
                 >
               </li>
+              <li>
+                <a class="false--anchor" @click="displayCredits()">
+                  Credits</a
+                >
+              </li>
               <!-- <li>
                 <a href="https://bit.ly/RegDevCon" target="_blank" rel="noopener noreferrer" class="header__button">Register</a>
               </li> -->
@@ -61,11 +66,25 @@
         </div>
       </div>
     </div>
+    <CreditsModal />
   </footer>
 </template>
 
 <script>
-export default {};
+import CreditsModal from '@/components/shared/CreditsModal'
+export default {
+  components: {
+    CreditsModal
+  },
+  methods: {
+    displayCredits() {
+      this.$modal.show("session_modal");
+    },
+    closeModal() {
+      this.$modal.hide("session_modal");
+    },
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -158,7 +177,14 @@ export default {};
             font-weight: 700;
             text-decoration: none;
             color: #aabbc3;
+
+            &.false--anchor {
+              &:hover {
+                cursor: pointer;
+              }
+            }
           }
+          
         }
       }
     }
