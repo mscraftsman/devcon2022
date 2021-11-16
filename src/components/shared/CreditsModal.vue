@@ -29,7 +29,7 @@
 						Thank you for going above and beyond:
 					</p>
 					<p>
-						Jade Marine Ng Tat Mew, Sandeep Ramgolam, Cedric Poilly, Neil Arwin Baichoo, Emmy Ng Tat Mew, Pajanilingum Renghen, Vidush Namah, Aditya Bholah, Gopaul Chitesh, Kushul Soomaree, Chervine Bhiwoo, Ish Sookun, Girish Mahabir, Chanakya Tiger Jheengut (Pritvi), Vanessa V.Chellen.
+						Jade Marine Ng Tat Mew, Sandeep Ramgolam, Cedric Poilly, Neil Arwin Baichoo, Emmy Ng Tat Mew, Pajanilingum Renghen, Vidush Namah, Aditya Bholah, Chitesh Sham, Kushul Soomaree, Chervine Bhiwoo, Girish Mahabir, Chanakya Tiger Jheengut (Pritvi), Vanessa V. Chellen.
 					</p>
 				</div>
       </div>
@@ -92,7 +92,7 @@ export default {
     max-height: 90vh;
     overflow: scroll;
 		background: #febf00;
-		
+
     .content {
 			display: grid;
 			grid-template-columns: 20% 80%;
@@ -126,7 +126,7 @@ export default {
 					font-weight: 300;
 				}
 			}
-      
+
     }
   }
 }
