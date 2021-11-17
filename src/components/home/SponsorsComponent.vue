@@ -135,7 +135,7 @@
                   <img src="/funding/ceridian.png" alt="Ceridian" />
                 </a>
               </div>
-              <div class="item">
+              <!-- <div class="item">
                 <a
                   href="https://www.klanik.com/"
                   target="_blank"
@@ -143,7 +143,7 @@
                 >
                   <img src="/funding/klanik.png" alt="Klanik" />
                 </a>
-              </div>
+              </div> -->
             </div>
           </div>
 
