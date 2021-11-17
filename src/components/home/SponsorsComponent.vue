@@ -135,7 +135,7 @@
                   <img src="/funding/ceridian.png" alt="Ceridian" />
                 </a>
               </div>
-              <!-- <div class="item">
+              <div class="item">
                 <a
                   href="https://www.klanik.com/"
                   target="_blank"
@@ -143,7 +143,7 @@
                 >
                   <img src="/funding/klanik.png" alt="Klanik" />
                 </a>
-              </div> -->
+              </div>
             </div>
           </div>
 
@@ -293,7 +293,11 @@
             <div class="title-package speaker">Speaker Sponsor</div>
             <div class="funding">
               <div class="item logo--iqera">
-                <a href="https://www.iqera.com/" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.iqera.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/funding/iqera.png" alt="ringier" />
                 </a>
               </div>
@@ -323,7 +327,6 @@
               </div>
             </div>
           </div>
-
 
           <div class="group media">
             <div class="title-package media">Media Partner</div>
@@ -819,8 +822,6 @@ export default {};
           }
         }
       }
-
-
     }
   }
 }

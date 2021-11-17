@@ -54,9 +54,7 @@
                 >
               </li>
               <li>
-                <a class="false--anchor" @click="displayCredits()">
-                  Credits</a
-                >
+                <a class="false--anchor" @click="displayCredits()"> Credits</a>
               </li>
               <!-- <li>
                 <a href="https://bit.ly/RegDevCon" target="_blank" rel="noopener noreferrer" class="header__button">Register</a>
@@ -71,7 +69,7 @@
 </template>
 
 <script>
-import CreditsModal from '@/components/shared/CreditsModal'
+import CreditsModal from "@/components/shared/CreditsModal";
 export default {
   components: {
     CreditsModal
@@ -82,7 +80,7 @@ export default {
     },
     closeModal() {
       this.$modal.hide("session_modal");
-    },
+    }
   }
 };
 </script>
@@ -184,7 +182,6 @@ export default {
               }
             }
           }
-          
         }
       }
     }
