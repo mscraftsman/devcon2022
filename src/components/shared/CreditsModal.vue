@@ -15,7 +15,7 @@
     </div>
     <div class="content">
       <div class="left__wrapper">
-        <img src="/images/credits2.png" alt="" />
+        <img src="/images/credits3.png" alt="" />
       </div>
       <div class="right__wrapper">
         <h3>Credit to our contributors</h3>
@@ -103,18 +103,24 @@ export default {
 
     .content {
       display: grid;
-      grid-template-columns: 20% 80%;
+      grid-template-columns: 20% 20% 60%;
+      grid-template-rows: 1fr;
 
       .left__wrapper {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         img {
           width: 100%;
         }
       }
 
       .right__wrapper {
+        grid-column: 2 / 4;
+        grid-row: 1 / 2;
         padding: 40px;
+        padding-top: 150px;
 
         h3 {
           text-transform: uppercase;
@@ -125,7 +131,7 @@ export default {
           padding: 10px 20px;
           margin: 20px 0;
           margin-top: 30px;
-          margin-bottom: 30px;
+          margin-bottom: 20px;
           line-height: 55px;
         }
 
@@ -138,16 +144,19 @@ export default {
   }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 768px) {
   .session_modal {
     .vm--modal {
       .content {
         grid-template-columns: 100%;
+
         .left__wrapper {
           display: none;
         }
 
         .right__wrapper {
+          grid-column: 1 / 2;
+          padding-top: 20px;
           h3 {
             font-size: 30px;
             line-height: 40px;
