@@ -1,7 +1,7 @@
 <template>
   <modal
-    name="session_modal"
-    class="session_modal"
+    name="credits__modal"
+    class="credits__modal"
     :width="1100"
     height="auto"
     :adaptive="true"
@@ -49,17 +49,17 @@
 export default {
   methods: {
     openModal() {
-      this.$modal.show("session_modal");
+      this.$modal.show("credits__modal");
     },
     closeModal() {
-      this.$modal.hide("session_modal");
+      this.$modal.hide("credits__modal");
     }
   }
 };
 </script>
 
 <style lang="scss">
-.session_modal {
+.credits__modal {
   --red: #f53f32;
   --blue: #14a0c7;
   --yellow: #fed02b;
@@ -145,7 +145,7 @@ export default {
 }
 
 @media (max-width: 768px) {
-  .session_modal {
+  .credits__modal {
     .vm--modal {
       .content {
         grid-template-columns: 100%;

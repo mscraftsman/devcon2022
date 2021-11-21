@@ -76,10 +76,10 @@ export default {
   },
   methods: {
     displayCredits() {
-      this.$modal.show("session_modal");
+      this.$modal.show("credits__modal");
     },
     closeModal() {
-      this.$modal.hide("session_modal");
+      this.$modal.hide("credits__modal");
     }
   }
 };
