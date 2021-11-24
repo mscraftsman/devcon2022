@@ -145,7 +145,7 @@
             language through meetups and networking.
           </p>
           <p>
-            Our fellowship is a new one, initiated with developers who fell in love
+            Our fellowship is a new one, initiated by developers who fell in love
             with Go and have used it professionally. We look forward to sharing our
             experience with more people; hoping we can make friends to learn and
             laugh along the way.
