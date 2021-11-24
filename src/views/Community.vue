@@ -131,6 +131,33 @@
         >
         end of year reports. Looking forward to meet you ✨.
       </p>
+
+      <h2>Gophers Mauritius</h2>
+      <div class="usergroup-wrapper">
+        <div class="usergroup-logo-wrapper">
+          <img src="https://github.com/gophersmu/web/raw/master/public/gophersmu.png" alt="gophersmu logo"/>
+        </div>
+        <div>
+          <p>
+            We are gophers (Go developers) from the paradise island of Mauritius.
+            <br>
+            Our aim is to promote usage and knowledge sharing of the Go programming
+            language through meetups and networking.
+          </p>
+          <p>
+            Our fellowship is a new one, initiated with developers who fell in love
+            with Go and have used it professionally. We look forward to sharing our
+            experience with more people; hoping we can make friends to learn and
+            laugh along the way.
+          </p>
+          <p>
+            For more information please check our website -
+            <a href="https://gophers.mu/">
+              https://www.gophers.mu
+            </a>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -171,5 +198,21 @@
   .content {
     padding-bottom: 200px;
   }
+}
+
+.usergroup-wrapper {
+  display: flex;
+}
+
+.usergroup-logo-wrapper {
+  margin-right: 2rem;
+  display: flex;
+  align-content: center;
+  justify-content:center;
+  flex-direction: column;
+}
+
+.usergroup-logo-wrapper img {
+  width: 10rem;
 }
 </style>
