@@ -1,6 +1,13 @@
 <template>
   <div class="container__fw page">
-    <h1>Networking & Community</h1>
+
+    <div class="title__section">
+      <div class="sub-text">Communication and exchange with others</div>
+      <h2 class="title">
+        Networking & Community
+      </h2>
+    </div>
+
     <div class="content">
       <p>
         Take the chance to exchange with other attendees, speakers and partners,
@@ -162,16 +169,10 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .page {
   padding: 40px 10px;
 
-  h1 {
-    text-align: center;
-    font-family: var(--font-bangers);
-    font-size: 60px;
-    letter-spacing: 2px;
-  }
 
   h2 {
     font-family: var(--font-bangers);
