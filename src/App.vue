@@ -68,6 +68,13 @@ html {
   padding: 0 10px;
 }
 
+.container__large__fw {
+  margin: 0 auto;
+  max-width: 1500px;
+  width: 100%;
+  padding: 0 10px;
+}
+
 .title__section {
   text-align: center;
 
