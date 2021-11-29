@@ -240,6 +240,15 @@
               </div>
               <div class="item">
                 <a
+                  href="https://www.bocasay.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/funding/bocasay.png" alt="BOCASAY" />
+                </a>
+              </div>
+              <div class="item">
+                <a
                   href="http://www.ios.mu/"
                   target="_blank"
                   rel="noopener noreferrer"
