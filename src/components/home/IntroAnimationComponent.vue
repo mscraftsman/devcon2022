@@ -10,11 +10,10 @@
       </h1>
       <div class="button-wrapper flex">
         <a
-          href="https://sessionize.com/developers-conference-2022---mauritius/"
           target="_blank"
           class="meta-title__sub"
         >
-          Call for papers
+          Call for papers is closed
         </a>
       </div>
     </div>
