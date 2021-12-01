@@ -148,7 +148,7 @@ export default {
 
   --height: 25px;
   --font-size: 14px;
-  --width: 90px;
+  --width: 150px;
   --margin: 10px;
 
   height: var(--height);
@@ -253,7 +253,7 @@ export default {
 
     --height: 50px;
     --font-size: 25px;
-    --width: 180px;
+    --width: 310px;
     --margin: 15px;
   }
 }
