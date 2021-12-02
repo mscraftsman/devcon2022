@@ -295,6 +295,15 @@
                   <img src="/funding/gt.png" alt="Graphics Temple" />
                 </a>
               </div>
+              <div class="item logo--myconnecting">
+                <a
+                  href="https://www.myconnecting.fr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/funding/myconnecting.png" alt="MyConnecting" />
+                </a>
+              </div>
             </div>
           </div>
 
@@ -719,6 +728,13 @@ export default {};
         }
 
         &.logo--serviqual {
+          img {
+            // max-height: 130px;
+            width: 100%;
+          }
+        }
+
+        &.logo--myconnecting {
           img {
             // max-height: 130px;
             width: 100%;
