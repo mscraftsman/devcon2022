@@ -52,7 +52,7 @@
 			</div>
 		</div>
 		<div class="community__logo">
-			<img src="" alt="">
+			<img src="/images/communities/mmc.jpg" alt="Mauritius Makers Community">
 		</div>
 	</div>
 </template>
