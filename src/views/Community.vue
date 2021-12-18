@@ -38,6 +38,7 @@
         <CommunityBlockLUGM />
         <CommunityBlockMMC />
         <CommunityBlockOpenSUSEMU />
+        <CommunityBlockOracleClub />
         <CommunityBlockUbuntuMU />
         <CommunityBlockPYMUG />
         <CommunityBlockGophersMU />
@@ -54,6 +55,7 @@ import CommunityBlockGophersMU from '@/components/communities/CommunityBlockGoph
 import CommunityBlockLUGM from '@/components/communities/CommunityBlockLUGM'
 import CommunityBlockMMC from '@/components/communities/CommunityBlockMMC'
 import CommunityBlockOpenSUSEMU from '@/components/communities/CommunityBlockOpenSUSEMU'
+import CommunityBlockOracleClub from '@/components/communities/CommunityBlockOracleClub'
 import CommunityBlockPYMUG from '@/components/communities/CommunityBlockPYMUG'
 import CommunityBlockUbuntuMU from '@/components/communities/CommunityBlockUbuntuMU'
 
@@ -65,6 +67,7 @@ export default {
     CommunityBlockLUGM,
     CommunityBlockMMC,
     CommunityBlockOpenSUSEMU,
+    CommunityBlockOracleClub,
     CommunityBlockPYMUG,
     CommunityBlockUbuntuMU
   }
@@ -154,7 +157,7 @@ export default {
     padding: 0 40px;
     padding-bottom: 20px;
     box-shadow: 0 10px 20px 20px rgba(0, 0, 0, 0.05);
-    
+
     .community__title {
 
     }
