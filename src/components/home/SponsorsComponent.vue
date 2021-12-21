@@ -304,6 +304,15 @@
                   <img src="/funding/myconnecting.png" alt="MyConnecting" />
                 </a>
               </div>
+              <div class="item logo--mns">
+                <a
+                  href="https://mns.mu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/funding/mns.png" alt="Mauritius Network Services" />
+                </a>
+              </div>
             </div>
           </div>
 
@@ -742,6 +751,7 @@ export default {};
         }
 
         &.logo--gt,
+        &.logo--mns,
         &.logo--frci {
           img {
             // max-height: 80px;
