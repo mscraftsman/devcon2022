@@ -144,7 +144,7 @@
                   <img src="/funding/klanik.png" alt="Klanik" />
                 </a>
               </div>
-              <div class="item">
+              <div class="item logo--objectivity">
                 <a
                   href="https://www.objectivity.co.uk/"
                   target="_blank"
@@ -680,6 +680,12 @@ export default {};
         &.logo--lasentinelle {
           img {
             width: 90%;
+          }
+        }
+
+        &.logo--objectivity {
+          img {
+            width: 94%;
           }
         }
 
