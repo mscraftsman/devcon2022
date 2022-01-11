@@ -144,6 +144,15 @@
                   <img src="/funding/klanik.png" alt="Klanik" />
                 </a>
               </div>
+              <div class="item">
+                <a
+                  href="https://www.objectivity.co.uk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/funding/objectivity.png" alt="Objectivity" />
+                </a>
+              </div>
             </div>
           </div>
 
