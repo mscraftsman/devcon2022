@@ -5,15 +5,12 @@
         <div class="meta-title__location">Caudan Arts Centre</div>
         <div class="meta-title__period font-black">17 - 19 February 2022</div>
       </div>
-      <div class="postpone">
-        <a
-          class="postpone-link"
-          target="_blank"
-          href="https://www.lexpress.mu/article/403570/covid-19-restrictions-sanitaires-etendues-jusquen-mars"
-        >
+      <a 
+        class="postpone" 
+        target="_blank"
+        href="https://www.lexpress.mu/article/403570/covid-19-restrictions-sanitaires-etendues-jusquen-mars">
           Postponed due to sanitary restrictions
-        </a>
-      </div>
+      </a>
       <h1 class="title">
         Developers <span class="text-block">Conference 2022</span>
       </h1>
@@ -166,20 +163,35 @@ export default {
 }
 
 .postpone {
-    background-color: #E32636;
-    color: #fff;
-    font-size: var(--landing-title-location-fs);
-    font-family: var(--font-poppins);
-    text-transform: uppercase;
-    font-weight: 700;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    margin-bottom: 10px;
+  background-color: #E32636;
+  color: #fff;
+  font-size: var(--landing-title-location-fs);
+  font-family: var(--font-poppins);
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 8px 12px;
+  margin: 10px 0;
+  display: inline-flex;
 }
 
 .postpone-link {
     color: #fff;
     text-decoration: none;
+}
+
+@media (max-width: 425px) {
+  .postpone {
+    font-size: 9px;
+    margin: 4px 0;
+    padding: 5px 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-block {
+    transform: scale(0.95);
+  }
 }
 
 @media (min-width: 425px) {
