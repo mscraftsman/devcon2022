@@ -5,17 +5,18 @@
         <div class="meta-title__location">Caudan Arts Centre</div>
         <div class="meta-title__period font-black">17 - 19 February 2022</div>
       </div>
+      <div class="postpone">
+        <a
+          class="postpone-link"
+          target="_blank"
+          href="https://www.lexpress.mu/article/403570/covid-19-restrictions-sanitaires-etendues-jusquen-mars"
+        >
+          Postponed due to sanitary restrictions
+        </a>
+      </div>
       <h1 class="title">
         Developers <span class="text-block">Conference 2022</span>
       </h1>
-      <div class="button-wrapper flex">
-        <a
-          target="_blank"
-          class="meta-title__sub"
-        >
-          Call for papers is closed
-        </a>
-      </div>
     </div>
 
     <div class="building-rotation building-landing">
@@ -131,6 +132,7 @@ export default {
   font-size: var(--landing-title-period-fs);
   font-family: var(--font-poppins);
   text-transform: uppercase;
+  text-decoration: line-through;
   font-weight: 700;
   margin-bottom: 10px;
 }
@@ -162,6 +164,24 @@ export default {
     color: white;
   }
 }
+
+.postpone {
+    background-color: #E32636;
+    color: #fff;
+    font-size: var(--landing-title-location-fs);
+    font-family: var(--font-poppins);
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+}
+
+.postpone-link {
+    color: #fff;
+    text-decoration: none;
+}
+
 @media (min-width: 425px) {
   .title {
     --landing-title-location-fs: 2vw;
