@@ -54,6 +54,9 @@
                 >
               </li>
               <li>
+                <a href="https://drive.google.com/file/d/1fLhSAG_w5EpcKA_d6MpHgkLuWBCr9ArD/view">Become a sponsor</a>
+              </li>
+              <li>
                 <a class="false--anchor" @click="displayCredits()"> Credits</a>
               </li>
               <!-- <li>

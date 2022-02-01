@@ -144,6 +144,15 @@
                   <img src="/funding/klanik.png" alt="Klanik" />
                 </a>
               </div>
+              <div class="item logo--objectivity">
+                <a
+                  href="https://www.objectivity.co.uk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/funding/objectivity.png" alt="Objectivity" />
+                </a>
+              </div>
             </div>
           </div>
 
@@ -240,6 +249,15 @@
               </div>
               <div class="item">
                 <a
+                  href="https://www.bocasay.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/funding/bocasay.png" alt="BOCASAY" />
+                </a>
+              </div>
+              <div class="item">
+                <a
                   href="http://www.ios.mu/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -284,6 +302,24 @@
                   rel="noopener noreferrer"
                 >
                   <img src="/funding/gt.png" alt="Graphics Temple" />
+                </a>
+              </div>
+              <div class="item logo--myconnecting">
+                <a
+                  href="https://www.myconnecting.fr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/funding/myconnecting.png" alt="MyConnecting" />
+                </a>
+              </div>
+              <div class="item logo--mns">
+                <a
+                  href="https://mns.mu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/funding/mns.png" alt="Mauritius Network Services" />
                 </a>
               </div>
             </div>
@@ -647,6 +683,12 @@ export default {};
           }
         }
 
+        &.logo--objectivity {
+          img {
+            width: 94%;
+          }
+        }
+
         &.logo--swan {
           img {
             width: 78%;
@@ -716,7 +758,15 @@ export default {};
           }
         }
 
+        &.logo--myconnecting {
+          img {
+            // max-height: 130px;
+            width: 100%;
+          }
+        }
+
         &.logo--gt,
+        &.logo--mns,
         &.logo--frci {
           img {
             // max-height: 80px;
