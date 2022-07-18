@@ -12,7 +12,7 @@
             IT industry as compared to other work sectors. Due to various
             lockdowns, travel bans and quarantine periods, we had no choice than
             to postpone the annual Developers Conference from March 2021 to
-            February 2022.
+            November 2022.
           </p>
           <p>
             Being the largest IT Community in Mauritius, we are so passionate
