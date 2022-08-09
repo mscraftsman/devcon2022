@@ -322,6 +322,15 @@
                   <img src="/funding/mns.png" alt="Mauritius Network Services" />
                 </a>
               </div>
+              <div class="item logo--peachpayments">
+                <a
+                  href="https://www.peachpayments.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/funding/peach-payments.png" alt="Peach Payments" />
+                </a>
+              </div>
             </div>
           </div>
 
