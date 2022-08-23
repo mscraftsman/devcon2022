@@ -194,25 +194,6 @@
             </div>
           </div>
 
-          <div class="group time">
-            <div class="title-package time">
-              <img src="/stones/time.png" alt="Time Stone" />
-              <div class="text">Time Stone (Silver)</div>
-              <img src="/stones/time.png" alt="Time Stone" />
-            </div>
-            <div class="funding">
-              <div class="item logo--uniciti">
-                <a
-                  href="https://www.unicitieducationhub.com/institutions/higher-education/supinfo-international-university"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src="/funding/uniciti.png" alt="Uniciti Education Hub" />
-                </a>
-              </div>
-            </div>
-          </div>
-
           <div class="group mind">
             <div class="title-package mind">
               <img src="/stones/mind.png" alt="Mind Stone" />
@@ -220,6 +201,15 @@
               <img src="/stones/mind.png" alt="Mind Stone" />
             </div>
             <div class="funding">
+              <div class="item logo--uniciti">
+                <a
+                href="https://www.unicitieducationhub.com/institutions/higher-education/supinfo-international-university"
+                target="_blank"
+                rel="noopener noreferrer"
+                >
+                <img src="/funding/uniciti.png" alt="Uniciti Education Hub" />
+                </a>
+              </div>
               <div class="item">
                 <a
                   href="https://www.aerow.group"
