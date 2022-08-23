@@ -361,13 +361,13 @@
                   <img src="/funding/spoon.png" alt="Spoon Consulting" />
                 </a>
               </div>
-              <div class="item logo--mscc">
+              <div class="item logo--lasentinelle">
                 <a
-                  href="https://www.mscc.mu"
+                  href="https://www.corel.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="/funding/mscc.png" alt="MSCC" />
+                  <img src="/funding/corel.png" alt="Corel" />
                 </a>
               </div>
             </div>
@@ -376,7 +376,7 @@
           <div class="group media">
             <div class="title-package media">Media Partner</div>
             <div class="funding">
-              <div class="item logo--lasentinelle">
+              <div class="item">
                 <a
                   href="https://www.lasentinelle.mu/"
                   target="_blank"
