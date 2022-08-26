@@ -333,7 +333,16 @@
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="/funding/iqera.png" alt="ringier" />
+                  <img src="/funding/iqera.png" alt="iqera" />
+                </a>
+              </div>
+              <div class="item">
+                <a
+                  href="https://www.ringier.com/about-us/south-africa/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/funding/ringier.png" alt="ringier" />
                 </a>
               </div>
             </div>
