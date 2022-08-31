@@ -342,7 +342,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="/funding/ringier.png" alt="ringier" />
+                  <img src="/funding/ringier.png" alt="Ringier" />
                 </a>
               </div>
             </div>
