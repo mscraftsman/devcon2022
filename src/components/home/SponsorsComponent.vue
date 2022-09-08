@@ -321,6 +321,15 @@
                   <img src="/funding/peach-payments.png" alt="Peach Payments" />
                 </a>
               </div>
+              <div class="item logo--mostickers">
+                <a
+                  href="https://thundergear.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/funding/mostickers.png" alt="MOSTICKERS" />
+                </a>
+              </div>
             </div>
           </div>
 
