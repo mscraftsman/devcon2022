@@ -327,7 +327,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="/funding/mostickers.png" alt="MOSTICKERS" />
+                  <img src="/funding/mostickers.png" alt="MOSTICKERS by thundergear.io" />
                 </a>
               </div>
             </div>
