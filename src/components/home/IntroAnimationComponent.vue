@@ -8,12 +8,6 @@
       <h1 class="title">
         Developers <span class="text-block">Conference 2022</span>
       </h1>
-      <a
-        class="register register-link"
-        target="_blank"
-        href="https://forms.gle/KdMYMZtqv2GiGDte9">
-          Register
-      </a>
     </div>
 
     <div class="building-rotation building-landing">
