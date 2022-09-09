@@ -323,7 +323,7 @@
               </div>
               <div class="item logo--mostickers">
                 <a
-                  href="https://thundergear.io"
+                  href="https://mostickers.shop/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
