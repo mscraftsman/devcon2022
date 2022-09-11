@@ -388,5 +388,6 @@ export default {
 .text-box {
   text-align: center;
   font-family: var(--font-bangers);
+  transform: translateY(-15px);
 }
 </style>
