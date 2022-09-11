@@ -54,11 +54,18 @@
                 >
               </li>
               <li>
-                <a href="https://drive.google.com/file/d/1OESX2x2KuVcD322ds5ZXwQWhQfRilAwb/view">Become a sponsor</a>
+                <a
+                  href="https://drive.google.com/file/d/1OESX2x2KuVcD322ds5ZXwQWhQfRilAwb/view"
+                  >Become a sponsor</a
+                >
+              </li>
+              <li>
+                <router-link :to="{ name: 'Extras' }">Extras</router-link>
               </li>
               <li>
                 <a class="false--anchor" @click="displayCredits()"> Credits</a>
               </li>
+
               <!-- <li>
                 <a href="https://bit.ly/RegDevCon" target="_blank" rel="noopener noreferrer" class="header__button">Register</a>
               </li> -->
@@ -75,7 +82,7 @@
 import CreditsModal from "@/components/shared/CreditsModal";
 export default {
   components: {
-    CreditsModal
+    CreditsModal,
   },
   methods: {
     displayCredits() {
@@ -83,8 +90,8 @@ export default {
     },
     closeModal() {
       this.$modal.hide("credits__modal");
-    }
-  }
+    },
+  },
 };
 </script>
 

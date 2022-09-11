@@ -1,69 +1,121 @@
 <template>
-  <div class="container__fw page">
-    <h1>Extras</h1>
-    <div class="content">
-      <h2>Caricature Artists</h2>
-      <h3>Bhashnee Isnoo</h3>
-      <p>
-        <img
-          class="caricature-artist"
-          src="/images/artists/bhashnee-isnoo.jpg"
-        />
-        Hello! I’m Bhashnee Isnoo! I’m in my last year of University doing a BSc
-        (Hons) in Advertising and Visual Communication. I really enjoy doing
-        illustrations and I’m planning on doing that as a profession. Wherever
-        there is something related with Illustrations, Character design or
-        Fanarts, I’m there cuz illustration is love, illustration is life!
-      </p>
+  <div class="page--extras">
+    <div class="container__fw page">
+      <div class="title__section">
+        <h2 class="title">
+          Extras
+        </h2>
+      </div>
+    </div>
+    <div class="container__large__fw">
+      <div class="extras--listing">
+        <div class="extras-block__container">
+          <div class="extras__description first">
+            <h2 class="extras__title">
+              Caricature Artist / <span>Bhashnee Isnoo</span>
+            </h2>
+            <div class="extras__info">
+              <p>
+                Hello! I’m Bhashnee Isnoo! I’m in my last year of University
+                doing a BSc (Hons) in Advertising and Visual Communication. I
+                really enjoy doing illustrations and I’m planning on doing that
+                as a profession. Wherever there is something related with
+                Illustrations, Character design or Fanarts, I’m there cuz
+                illustration is love, illustration is life!
+              </p>
 
-      <p>
-        I believe that drawing and illustration is a journey, where we are all
-        constantly learning and getting better! I spend my free time watching my
-        favorites on YouTube. I enjoy watching tv shows/anime, doing miniatures
-        with clay and recently I’m enjoying the whole process of learning how to
-        tattoo.
-      </p>
+              <p>
+                I believe that drawing and illustration is a journey, where we
+                are all constantly learning and getting better! I spend my free
+                time watching my favorites on YouTube. I enjoy watching tv
+                shows/anime, doing miniatures with clay and recently I’m
+                enjoying the whole process of learning how to tattoo.
+              </p>
 
-      <p>
-        You can find me on
-        <a href="https://www.instagram.com/bassart_/">Instagram. </a>
-      </p>
+              <div class="social__block">
+                <div class="website__info"></div>
+                <div class="social__icons">
+                  <a
+                    href="https://www.instagram.com/bassart_/"
+                    target="_blank"
+                    class="social__icon"
+                  >
+                    <img src="/icon/dark/instagram.svg" alt="Instagram" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="extras__logo"
+            :style="{ background: 'url(/images/artists/bhashnee-isnoo.jpg)' }"
+          ></div>
+        </div>
 
-      <h2>Plush Dolls Artist</h2>
-      <h3>Kyky Otaku</h3>
-      <p>
-        <img class="plushdoll-artist" src="/images/artists/kyky-otaku.jpg" />
-        Hi, my name is Sabrina a.k.a Kyky (entrepreneur) 28 years old, art
-        passionate and owner of Kyky Otaku.
-      </p>
+        <div class="extras-block__container">
+          <div class="extras__description second">
+            <h2 class="extras__title">
+              Plush Dolls Artist / <span>Kyky Otaku</span>
+            </h2>
+            <div class="extras__info">
+              <p>
+                Hi, my name is Sabrina a.k.a Kyky (entrepreneur) 28 years old,
+                art passionate and owner of Kyky Otaku.
+              </p>
 
-      <p>
-        I've been studying art since secondary school till my 2 years at the
-        M.I.E for the teacher's diploma. But learning new skills never ends.
-      </p>
+              <p>
+                I've been studying art since secondary school till my 2 years at
+                the M.I.E for the teacher's diploma. But learning new skills
+                never ends.
+              </p>
 
-      <p>
-        Kyky Otaku came to life during my school years and officially became a
-        full time job since 5 years. Being self-employed requires a lot of work
-        but it's so rewarding in terms of personal development and from the
-        smile, love and laughter from my customers.
-      </p>
+              <p>
+                Kyky Otaku came to life during my school years and officially
+                became a full time job since 5 years. Being self-employed
+                requires a lot of work but it's so rewarding in terms of
+                personal development and from the smile, love and laughter from
+                my customers.
+              </p>
 
-      <p>
-        I create plush of all sorts, mainly human puppet (portrait doll) but
-        also illustrations, custom cards, dreamcatchers and now macrame.
-      </p>
+              <p>
+                I create plush of all sorts, mainly human puppet (portrait doll)
+                but also illustrations, custom cards, dreamcatchers and now
+                macrame.
+              </p>
 
-      <p>
-        My aim is to help everyone in finding a unique gift to create a
-        memorable moment.
-      </p>
+              <p>
+                My aim is to help everyone in finding a unique gift to create a
+                memorable moment.
+              </p>
 
-      <p>
-        You can find me on
-        <a href="https://www.facebook.com/kyky.artwork/">Facebook</a> and
-        <a href="https://www.instagram.com/kyky_otaku/">Instagram</a>.
-      </p>
+              <div class="social__block">
+                <div class="website__info"></div>
+                <div class="social__icons">
+                  <a
+                    href="https://www.facebook.com/kyky.artwork/"
+                    target="_blank"
+                    class="social__icon"
+                  >
+                    <img src="/icon/dark/facebook.svg" alt="Facebook" />
+                  </a>
+
+                  <a
+                    href="https://www.instagram.com/kyky_otaku/"
+                    target="_blank"
+                    class="social__icon"
+                  >
+                    <img src="/icon/dark/instagram.svg" alt="Instagram" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="extras__logo"
+            :style="{ background: 'url(/images/artists/kyky-otaku.jpg)' }"
+          ></div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -71,55 +123,155 @@
 <style lang="scss" scoped>
 .page {
   padding: 40px 10px;
+}
 
-  h1 {
-    text-align: center;
-    font-family: var(--font-bangers);
-    font-size: 60px;
-    letter-spacing: 2px;
-  }
+.page--extras {
+  padding-bottom: 200px;
+}
 
-  h2 {
-    font-family: var(--font-bangers);
-    letter-spacing: 1px;
-    font-size: 40px;
-  }
-
-  img {
-    margin: 0 auto;
-    max-width: 600px;
-    width: 100%;
-    display: block;
-  }
+.extras-block__container {
+  display: grid;
+  grid-template-columns: 2fr 0.8fr;
+  grid-gap: 40px;
+  margin-bottom: 40px;
 
   p {
     font-weight: 300;
-    line-height: 28px;
-    font-size: 18px;
+  }
 
-    a {
-      color: var(--titanium);
+  &:nth-child(even) {
+    grid-template-columns: 0.8fr 2fr;
+
+    .extras__description {
+      order: 1;
+    }
+
+    .extras__logo {
+      order: 0;
     }
   }
 
-  .caricature-artist {
-    margin: 0 auto;
-    padding-top: 0.5rem;
-    padding-left: 0.5rem;
-    max-width: 200px;
-    width: 100%;
-    float: right;
-    display: inline;
+  .extras__description {
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    border: 2px solid #000;
+    border-color: #000;
+    padding: 0 40px;
+    padding-bottom: 20px;
+    box-shadow: 0 10px 20px 20px rgba(0, 0, 0, 0.095);
+    background: rgb(255, 255, 255);
+
+    &.first {
+      background: #def3fd;
+    }
+
+    &.second {
+      background: white;
+    }
+
+    .extras__title {
+      font-family: var(--font-bangers);
+      letter-spacing: 1px;
+      font-size: 40px;
+      margin-bottom: 0;
+
+      span {
+        color: rgba(0, 0, 0, 0.8);
+      }
+    }
+    .extras__info {
+      p {
+        font-size: 16px;
+        line-height: 27px;
+
+        a {
+          color: #102a43;
+          font-weight: 500;
+        }
+      }
+
+      .social__block {
+        margin: 20px 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+
+        .website__info {
+          transform: skewX(-10deg);
+          a {
+            background: var(--platinium);
+            color: white;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 20px;
+            font-family: var(--font-bangers);
+          }
+        }
+
+        .social__icons {
+          display: flex;
+          justify-content: flex-end;
+
+          .social__icon {
+            margin-right: 10px;
+            background: var(--bronze);
+            width: 40px;
+            height: 40px;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid black;
+
+            img {
+              width: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .extras__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+    border-radius: 255px 15px 300px 15px/15px 225px 15px 255px;
+    border: 1px solid #000;
+    border-color: #000;
+    background-size: cover !important;
+    background-position: center center !important;
+    box-shadow: 0 20px 20px 20px rgba(0, 0, 0, 0.1) !important;
+
+    img {
+      max-width: 250px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .extras-block__container {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    &:nth-child(even) {
+      grid-template-columns: 1fr;
+    }
+
+    .extras__description {
+      .extras__title {
+        font-size: 28px;
+      }
+    }
+
+    .extras__logo {
+      display: none;
+    }
   }
 
-  .plushdoll-artist {
-    margin: 0 auto;
-    padding-top: 0.5rem;
-    padding-right: 0.75rem;
-    max-width: 200px;
-    width: 100%;
-    float: left;
-    display: inline;
+  .page--extras {
+    padding-bottom: 40px;
   }
 }
 </style>
