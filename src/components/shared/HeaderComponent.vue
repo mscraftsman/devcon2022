@@ -116,12 +116,12 @@ export default {};
     text-decoration: none;
     font-size: 23px;
     margin-right: 10px;
-    width: 180px;
+    width: 120px;
 
     &.light {
       background: var(--titanium);
       color: white;
-      width: 180px;
+      width: 140px;
     }
   }
 
@@ -165,9 +165,12 @@ export default {};
     }
 
     .header__button {
+
+      font-size: 17px;
+
+      
       &.light {
         width: 140px;
-        font-size: 17px;
       }
     }
   }
