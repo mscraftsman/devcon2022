@@ -782,6 +782,18 @@ export default {};
           }
         }
 
+        &.logo--peachpayments {
+          img {
+            max-height: 98px;
+            width: auto;
+          }
+        }
+        &.logo--mostickers {
+          img {
+            width: 95%;
+          }
+        }
+
         &.logo--gt,
         &.logo--mns,
         &.logo--frci {
