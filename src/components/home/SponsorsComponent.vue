@@ -203,11 +203,11 @@
             <div class="funding">
               <div class="item logo--uniciti">
                 <a
-                href="https://www.unicitieducationhub.com/institutions/higher-education/supinfo-international-university"
-                target="_blank"
-                rel="noopener noreferrer"
+                  href="https://www.unicitieducationhub.com/institutions/higher-education/supinfo-international-university"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                <img src="/funding/uniciti.png" alt="Uniciti Education Hub" />
+                  <img src="/funding/uniciti.png" alt="Uniciti Education Hub" />
                 </a>
               </div>
               <div class="item">
@@ -309,7 +309,10 @@
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="/funding/mns.png" alt="Mauritius Network Services" />
+                  <img
+                    src="/funding/mns.png"
+                    alt="Mauritius Network Services"
+                  />
                 </a>
               </div>
               <div class="item logo--peachpayments">
@@ -327,7 +330,10 @@
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="/funding/mostickers.png" alt="MOSTICKERS by thundergear.io" />
+                  <img
+                    src="/funding/mostickers.png"
+                    alt="MOSTICKERS by thundergear.io"
+                  />
                 </a>
               </div>
             </div>

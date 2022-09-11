@@ -82,7 +82,7 @@
 import CreditsModal from "@/components/shared/CreditsModal";
 export default {
   components: {
-    CreditsModal,
+    CreditsModal
   },
   methods: {
     displayCredits() {
@@ -90,8 +90,8 @@ export default {
     },
     closeModal() {
       this.$modal.hide("credits__modal");
-    },
-  },
+    }
+  }
 };
 </script>
 

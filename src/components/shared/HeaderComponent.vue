@@ -165,10 +165,8 @@ export default {};
     }
 
     .header__button {
-
       font-size: 17px;
 
-      
       &.light {
         width: 140px;
       }

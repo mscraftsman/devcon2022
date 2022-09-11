@@ -122,7 +122,7 @@ export default {
   --landing-title-period-fs: 2vw;
   font-size: var(--landing-title-period-fs);
   font-family: var(--font-poppins);
-  color: #E32636;
+  color: #e32636;
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 10px;
@@ -157,7 +157,7 @@ export default {
 }
 
 .register {
-  background-color: #E32636;
+  background-color: #e32636;
   color: #fff;
   font-size: 2rem;
   font-family: var(--font-bangers);
@@ -170,8 +170,8 @@ export default {
 }
 
 .register-link {
-    color: #fff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
 @media (max-width: 425px) {
