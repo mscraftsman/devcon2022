@@ -12,31 +12,22 @@
         <div class="extras-block__container">
           <div class="extras__description first">
             <h2 class="extras__title">
-              Caricature Artist / <span>Bhashnee Isnoo</span>
+              Caricature Artist / <span>Thierry Amery</span>
             </h2>
             <div class="extras__info">
               <p>
-                Hello! I’m Bhashnee Isnoo! I’m in my last year of University
-                doing a BSc (Hons) in Advertising and Visual Communication. I
-                really enjoy doing illustrations and I’m planning on doing that
-                as a profession. Wherever there is something related with
-                Illustrations, Character design or Fanarts, I’m there cuz
-                illustration is love, illustration is life!
-              </p>
-
-              <p>
-                I believe that drawing and illustration is a journey, where we
-                are all constantly learning and getting better! I spend my free
-                time watching my favorites on YouTube. I enjoy watching tv
-                shows/anime, doing miniatures with clay and recently I’m
-                enjoying the whole process of learning how to tattoo.
+                Thierry Amery is a visual artist, caricature and portrait artist,
+                and visual arts subject leader at Northfields International High
+                School. He developed a unique style of caricatures without much
+                exaggeration as he sees his model through the eyes of a child in
+                only five minutes, one black pen and a paper.
               </p>
 
               <div class="social__block">
                 <div class="website__info"></div>
                 <div class="social__icons">
                   <a
-                    href="https://www.instagram.com/bassart_/"
+                    href="https://www.instagram.com/thierryamery"
                     target="_blank"
                     class="social__icon"
                   >
@@ -48,7 +39,7 @@
           </div>
           <div
             class="extras__logo"
-            :style="{ background: 'url(/images/artists/bhashnee-isnoo.jpg)' }"
+            :style="{ background: 'url(/images/artists/thierry-amery.jpg)' }"
           ></div>
         </div>
 
@@ -59,7 +50,7 @@
             </h2>
             <div class="extras__info">
               <p>
-                Hi, my name is Sabrina a.k.a Kyky (entrepreneur) 28 years old,
+                Hi, my name is Sabrina a.k.a Kyky (entrepreneur) 29 years old,
                 art passionate and owner of Kyky Otaku.
               </p>
 
@@ -113,6 +104,29 @@
           <div
             class="extras__logo"
             :style="{ background: 'url(/images/artists/kyky-otaku.jpg)' }"
+          ></div>
+        </div>
+
+                <div class="extras-block__container">
+          <div class="extras__description first">
+            <h2 class="extras__title">
+              Cosplay / <span>Stefan Wong Ng</span>
+            </h2>
+            <div class="extras__info">
+              <p>
+                Cosplay is a passion, we organise gatherings, workshops and events.
+                We provide superheroes for birthdays and private events.
+                We make people dream and reminiscent of their childhood.
+                We communicate through Cosplay Mauritius and Cosplayer for Hire
+              </p>
+              <p>
+                Kage Bunshin Ltd promote cosplay in different ways. What started as a passion turned to be a business model.
+              </p>
+            </div>
+          </div>
+          <div
+            class="extras__logo"
+            :style="{ background: 'url(/images/artists/stefan-wong-ng.jpg)' }"
           ></div>
         </div>
       </div>
