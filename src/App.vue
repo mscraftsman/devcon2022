@@ -18,8 +18,8 @@ import FooterComponent from "@/components/shared/FooterComponent.vue";
 export default {
   components: {
     HeaderComponent,
-    FooterComponent
-  }
+    FooterComponent,
+  },
 };
 </script>
 
@@ -28,6 +28,8 @@ export default {
 
 html {
   --dark: #333;
+  --black: black;
+  --white: #fff;
   --background: #f0f0f0;
   --diamond: #bf8bbc;
   --titanium: #4daee2;

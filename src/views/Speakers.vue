@@ -11,26 +11,37 @@
 
     <div class="page-all-speakers">
       <article class="comic">
-        <router-link
-          class="panel"
-          v-for="speaker in speakers"
-          :key="speaker.id"
-          :to="{ name: 'speaker', params: { id: speaker.id } }"
-          :alt="speaker.fullName"
-          :title="speaker.fullName + ', ' + speaker.tagLine"
-        >
-          <p class="text top-left">{{ speaker.tagLine }}</p>
-          <!--          <p class="text bottom-left">{{ speaker.sessions.length }}</p>-->
+        <transition name="fade" mode="out-in">
+          <div
+            class="speakers__listing"
+            key="loader"
+            v-if="speakers.length == 0"
+          >
+            <div class="loader">LOADING SPEAKERS</div>
+          </div>
+          <div class="speakers__listing" key="listing" v-else>
+            <router-link
+              class="panel"
+              v-for="speaker in speakers"
+              :key="speaker.id"
+              :to="{ name: 'Speaker', params: { id: speaker.id } }"
+              :alt="speaker.fullName"
+              :title="speaker.fullName + ', ' + speaker.tagLine"
+            >
+              <p class="text top-left">{{ speaker.tagLine }}</p>
+              <!--          <p class="text bottom-left">{{ speaker.sessions.length }}</p>-->
 
-          <p class="text bottom-right">{{ speaker.fullName }}</p>
-          <img
-            class=" border-2 border-black"
-            :src="speaker.profilePicture"
-            alt
-          />
-        </router-link>
+              <p class="text bottom-right">{{ speaker.fullName }}</p>
+              <img
+                class=" border-2 border-black"
+                :src="speaker.profilePicture"
+                alt
+              />
+            </router-link>
+          </div>
+        </transition>
       </article>
-    </div>  
+    </div>
   </div>
 </template>
 
@@ -42,33 +53,40 @@ import { time as timeHelper, getDay as getDayHelper } from "@/helpers";
 export default {
   methods: {
     ...mapActions(["FETCH_SESSIONS", "FETCH_SPEAKERS"]),
-    getSpeaker: function(id) {
+    getSpeaker(id) {
       if (this.speakers.length === 0) {
         this.FETCH_SPEAKERS();
       }
-      let theSpeaker = this.speakers.find(speaker => speaker.id === id);
+      let theSpeaker = this.speakers.find((speaker) => speaker.id === id);
       return theSpeaker.profilePicture;
     },
     time: timeHelper,
-    getDay: getDayHelper
+    getDay: getDayHelper,
   },
   computed: {
     ...mapGetters({
       sessions: "getSessions",
-      speakers: "getSpeakers"
-    })
+      speakers: "getSpeakers",
+    }),
   },
   mounted: function() {
     this.FETCH_SESSIONS();
     this.FETCH_SPEAKERS();
   },
   components: {
-    SpeakerBox
-  }
+    SpeakerBox,
+  },
 };
 </script>
 
 <style lang="scss" scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 
 .speakers__container {
   padding: 60px 0 200px;
@@ -80,26 +98,38 @@ export default {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
+.loader {
+  font-size: 25px;
+  padding: 80px 0;
+}
+
 /*  COMIC BOOK LAYOUT*/
 /* CREDITS TO chris22smith : https://codepen.io/chris22smith/pen/MyBBOe*/
 .comic {
-  display: flex;
-  flex-wrap: wrap;
-  /*font-family: "Comic Sans", cursive;*/
-  padding: 1vmin;
+  .speakers__listing {
+    display: flex;
+    flex-wrap: wrap;
+    /*font-family: "Comic Sans", cursive;*/
+    padding: 1vmin;
+    justify-content: center;
 
-  img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    /*filter: saturate(0);*/
+    a {
+      color: var(--black);
+    }
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      /*filter: saturate(0);*/
+    }
   }
 }
 
 .panel {
   background-color: #fff;
   border: solid 2px #000;
-  box-shadow: 0 6px 6px -6px #000;
+  box-shadow: 0 6px 15px -6px #000;
   display: inline-block;
   flex: 1 1;
   height: 300px;
@@ -112,7 +142,7 @@ export default {
 
 .text {
   background-color: #fff;
-  border: solid 2px #000;
+  border: solid 2px var(--black);
   margin: 0;
   padding: 10px 10px 0px;
 }
@@ -144,7 +174,11 @@ export default {
   right: -6px;
   transform: skew(-15deg);
   /*font: "Comic Sans MS";*/
-  padding: 5px 10px 0 5px;
+  padding: 5px 10px 2px 10px;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-bangers);
+  font-size: 21px;
 }
 
 .speech {
@@ -214,5 +248,14 @@ export default {
 
 .panel:nth-child(4n + 4) {
   background-image: radial-gradient(circle, lightcoral, tomato);
+}
+
+@media (max-width: 414px) {
+  .comic {
+    justify-content: center;
+  }
+  .panel {
+    max-width: 47%;
+  }
 }
 </style>
