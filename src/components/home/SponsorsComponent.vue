@@ -194,11 +194,11 @@
             </div>
           </div>
 
-          <div class="group time">
-            <div class="title-package time">
-              <img src="/stones/time.png" alt="Time Stone" />
-              <div class="text">Time Stone (Silver)</div>
-              <img src="/stones/time.png" alt="Time Stone" />
+          <div class="group mind">
+            <div class="title-package mind">
+              <img src="/stones/mind.png" alt="Mind Stone" />
+              <div class="text">Mind Stone (Bronze)</div>
+              <img src="/stones/mind.png" alt="Mind Stone" />
             </div>
             <div class="funding">
               <div class="item logo--uniciti">
@@ -210,16 +210,6 @@
                   <img src="/funding/uniciti.png" alt="Uniciti Education Hub" />
                 </a>
               </div>
-            </div>
-          </div>
-
-          <div class="group mind">
-            <div class="title-package mind">
-              <img src="/stones/mind.png" alt="Mind Stone" />
-              <div class="text">Mind Stone (Bronze)</div>
-              <img src="/stones/mind.png" alt="Mind Stone" />
-            </div>
-            <div class="funding">
               <div class="item">
                 <a
                   href="https://www.aerow.group"
@@ -319,7 +309,31 @@
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="/funding/mns.png" alt="Mauritius Network Services" />
+                  <img
+                    src="/funding/mns.png"
+                    alt="Mauritius Network Services"
+                  />
+                </a>
+              </div>
+              <div class="item logo--peachpayments">
+                <a
+                  href="https://www.peachpayments.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/funding/peach-payments.png" alt="Peach Payments" />
+                </a>
+              </div>
+              <div class="item logo--mostickers">
+                <a
+                  href="https://mostickers.shop/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/funding/mostickers.png"
+                    alt="MOSTICKERS by thundergear.io"
+                  />
                 </a>
               </div>
             </div>
@@ -334,7 +348,16 @@
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="/funding/iqera.png" alt="ringier" />
+                  <img src="/funding/iqera.png" alt="iqera" />
+                </a>
+              </div>
+              <div class="item">
+                <a
+                  href="https://www.ringier.com/about-us/south-africa/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/funding/ringier.png" alt="Ringier" />
                 </a>
               </div>
             </div>
@@ -352,13 +375,13 @@
                   <img src="/funding/spoon.png" alt="Spoon Consulting" />
                 </a>
               </div>
-              <div class="item logo--mscc">
+              <div class="item logo--lasentinelle">
                 <a
-                  href="https://www.mscc.mu"
+                  href="https://www.corel.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="/funding/mscc.png" alt="MSCC" />
+                  <img src="/funding/corel.png" alt="Corel" />
                 </a>
               </div>
             </div>
@@ -367,7 +390,7 @@
           <div class="group media">
             <div class="title-package media">Media Partner</div>
             <div class="funding">
-              <div class="item logo--lasentinelle">
+              <div class="item">
                 <a
                   href="https://www.lasentinelle.mu/"
                   target="_blank"
@@ -762,6 +785,18 @@ export default {};
           img {
             // max-height: 130px;
             width: 100%;
+          }
+        }
+
+        &.logo--peachpayments {
+          img {
+            max-height: 98px;
+            width: auto;
+          }
+        }
+        &.logo--mostickers {
+          img {
+            width: 95%;
           }
         }
 

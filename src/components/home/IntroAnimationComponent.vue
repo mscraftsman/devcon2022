@@ -3,14 +3,8 @@
     <div class="text-box">
       <div class="meta-title">
         <div class="meta-title__location">Caudan Arts Centre</div>
-        <div class="meta-title__period font-black">17 - 19 February 2022</div>
+        <div class="meta-title__period font-black">22 - 24 November 2022</div>
       </div>
-      <a 
-        class="postpone" 
-        target="_blank"
-        href="https://www.lexpress.mu/article/403570/covid-19-restrictions-sanitaires-etendues-jusquen-mars">
-          Postponed due to sanitary restrictions
-      </a>
       <h1 class="title">
         Developers <span class="text-block">Conference 2022</span>
       </h1>
@@ -128,8 +122,8 @@ export default {
   --landing-title-period-fs: 2vw;
   font-size: var(--landing-title-period-fs);
   font-family: var(--font-poppins);
+  color: #e32636;
   text-transform: uppercase;
-  text-decoration: line-through;
   font-weight: 700;
   margin-bottom: 10px;
 }
@@ -162,22 +156,22 @@ export default {
   }
 }
 
-.postpone {
-  background-color: #E32636;
+.register {
+  background-color: #e32636;
   color: #fff;
-  font-size: var(--landing-title-location-fs);
-  font-family: var(--font-poppins);
+  font-size: 2rem;
+  font-family: var(--font-bangers);
   text-transform: uppercase;
   font-weight: 700;
   text-decoration: none;
-  padding: 8px 12px;
+  padding: 10px 50px;
   margin: 10px 0;
   display: inline-flex;
 }
 
-.postpone-link {
-    color: #fff;
-    text-decoration: none;
+.register-link {
+  color: #fff;
+  text-decoration: none;
 }
 
 @media (max-width: 425px) {
@@ -394,5 +388,6 @@ export default {
 .text-box {
   text-align: center;
   font-family: var(--font-bangers);
+  transform: translateY(-15px);
 }
 </style>

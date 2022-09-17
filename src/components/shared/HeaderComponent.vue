@@ -24,13 +24,13 @@
           >
           <!-- <router-link :to="{ name: 'Extras' }" class="header__button light">Extras</router-link> -->
 
-          <!-- <a
-            href="https://drive.google.com/file/d/1fLhSAG_w5EpcKA_d6MpHgkLuWBCr9ArD/view"
+          <a
+            href="https://forms.gle/KdMYMZtqv2GiGDte9"
             target="_blank"
             rel="noopener noreferrer"
-            class="header__button light"
-            >Become a Sponsor</a
-          > -->
+            class="header__button"
+            >Register</a
+          >
         </div>
       </div>
     </div>
@@ -109,19 +109,19 @@ export default {};
     height: 40px;
     line-height: 40px;
     background: red;
-    color: black;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     font-size: 23px;
     margin-right: 10px;
-    width: 180px;
+    width: 120px;
 
     &.light {
       background: var(--titanium);
       color: white;
-      width: 180px;
+      width: 140px;
     }
   }
 
@@ -165,9 +165,10 @@ export default {};
     }
 
     .header__button {
+      font-size: 17px;
+
       &.light {
         width: 140px;
-        font-size: 17px;
       }
     }
   }

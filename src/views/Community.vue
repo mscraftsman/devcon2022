@@ -1,63 +1,63 @@
 <template>
-<div>
-  <div class="container__fw page page--community">
-    <div class="title__section">
-      <div class="sub-text">Communication and exchange with others</div>
-      <h2 class="title">
-        Networking & Community
-      </h2>
+  <div>
+    <div class="container__fw page page--community">
+      <div class="title__section">
+        <div class="sub-text">Communication and exchange with others</div>
+        <h2 class="title">
+          Networking & Community
+        </h2>
+      </div>
+
+      <div class="content">
+        <p>
+          Take the chance to exchange with other attendees, speakers and
+          partners, have some interesting conversations about software
+          development, latest information gained during one of the presentations
+          and let others know about your ups & downs in your projects.
+        </p>
+
+        <p>
+          Our Partners are here for existing & new talents for either
+          recruitment or internship or simply for a chit chat. Make the most out
+          of it! Our Happy Hour is just the right moment to maybe make a new
+          friend, seal some deals in a more relaxed atmosphere. Think about it.
+        </p>
+
+        <p>
+          But above all, come and enjoy this vibrant atmosphere full of
+          technology & activities!
+        </p>
+      </div>
     </div>
 
-    <div class="content">
-      <p>
-        Take the chance to exchange with other attendees, speakers and partners,
-        have some interesting conversations about software development, latest
-        information gained during one of the presentations and let others know
-        about your ups & downs in your projects.
-      </p>
-
-      <p>
-        Our Partners are here for existing & new talents for either recruitment
-        or internship or simply for a chit chat. Make the most out of it! Our
-        Happy Hour is just the right moment to maybe make a new friend, seal
-        some deals in a more relaxed atmosphere. Think about it.
-      </p>
-
-      <p>
-        But above all, come and enjoy this vibrant atmosphere full of technology
-        & activities!
-      </p>
-    </div>
-  </div>
-
-  <div class="container__large__fw page page--community--listing">
-    <div class="content">
-      <div class="communities--listing">
-        <CommunityBlockGDG />
-        <CommunityBlockFrontEndCoders />
-        <CommunityBlockLUGM />
-        <CommunityBlockMMC />
-        <CommunityBlockOpenSUSEMU />
-        <CommunityBlockOracleClub />
-        <CommunityBlockUbuntuMU />
-        <CommunityBlockPYMUG />
-        <CommunityBlockGophersMU />
+    <div class="container__large__fw page page--community--listing">
+      <div class="content">
+        <div class="communities--listing">
+          <CommunityBlockGDG />
+          <CommunityBlockFrontEndCoders />
+          <CommunityBlockLUGM />
+          <CommunityBlockMMC />
+          <CommunityBlockOpenSUSEMU />
+          <CommunityBlockOracleClub />
+          <CommunityBlockUbuntuMU />
+          <CommunityBlockPYMUG />
+          <CommunityBlockGophersMU />
+        </div>
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
-import CommunityBlockGDG from '@/components/communities/CommunityBlockGDG'
-import CommunityBlockFrontEndCoders from '@/components/communities/CommunityBlockFrontEndCoders'
-import CommunityBlockGophersMU from '@/components/communities/CommunityBlockGophersMU'
-import CommunityBlockLUGM from '@/components/communities/CommunityBlockLUGM'
-import CommunityBlockMMC from '@/components/communities/CommunityBlockMMC'
-import CommunityBlockOpenSUSEMU from '@/components/communities/CommunityBlockOpenSUSEMU'
-import CommunityBlockOracleClub from '@/components/communities/CommunityBlockOracleClub'
-import CommunityBlockPYMUG from '@/components/communities/CommunityBlockPYMUG'
-import CommunityBlockUbuntuMU from '@/components/communities/CommunityBlockUbuntuMU'
+import CommunityBlockGDG from "@/components/communities/CommunityBlockGDG";
+import CommunityBlockFrontEndCoders from "@/components/communities/CommunityBlockFrontEndCoders";
+import CommunityBlockGophersMU from "@/components/communities/CommunityBlockGophersMU";
+import CommunityBlockLUGM from "@/components/communities/CommunityBlockLUGM";
+import CommunityBlockMMC from "@/components/communities/CommunityBlockMMC";
+import CommunityBlockOpenSUSEMU from "@/components/communities/CommunityBlockOpenSUSEMU";
+import CommunityBlockOracleClub from "@/components/communities/CommunityBlockOracleClub";
+import CommunityBlockPYMUG from "@/components/communities/CommunityBlockPYMUG";
+import CommunityBlockUbuntuMU from "@/components/communities/CommunityBlockUbuntuMU";
 
 export default {
   components: {
@@ -71,11 +71,10 @@ export default {
     CommunityBlockPYMUG,
     CommunityBlockUbuntuMU
   }
-}
+};
 </script>
 
 <style lang="scss">
-
 .page {
   padding: 0px 10px;
 
@@ -107,7 +106,6 @@ export default {
   padding-bottom: 200px;
 }
 
-
 .page--community {
   padding-top: 50px;
 }
@@ -120,7 +118,7 @@ export default {
   margin-right: 2rem;
   display: flex;
   align-content: center;
-  justify-content:center;
+  justify-content: center;
   flex-direction: column;
 }
 
@@ -159,14 +157,13 @@ export default {
     box-shadow: 0 10px 20px 20px rgba(0, 0, 0, 0.05);
 
     .community__title {
-
     }
     .community__info {
       p {
         font-size: 16px;
 
         a {
-          color: #102A43;
+          color: #102a43;
           font-weight: 500;
         }
       }
@@ -210,7 +207,6 @@ export default {
           }
         }
       }
-
     }
   }
   .community__logo {

@@ -1,7 +1,7 @@
 <template>
   <div class="register__container">
     <a
-      href="https://bit.ly/RegDevCon"
+      href="https://forms.gle/KdMYMZtqv2GiGDte9"
       target="_blank"
       rel="noopener noreferrer"
       class="register__button"
