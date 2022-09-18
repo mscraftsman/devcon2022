@@ -2,9 +2,46 @@
   <div class="speaker__container">
     <div class="container__fw">
       <div class="speaker__wrapper">
-        SPEAKER SINGLE
+        <pre>
+					{{ speaker }}
+				</pre
+        >
 
-        {{ speaker }}
+        <div class="speaker__profile" v-if="speaker != null">
+          <div class="picture">
+            <img
+              :src="speaker.profilePicture"
+              :alt="speaker.firstName + ' ' + speaker.lastName"
+            />
+          </div>
+          <div class="bio">
+            <h2 class="name">{{ speaker.firstName }} {{ speaker.lastName }}</h2>
+            <div class="tagline"></div>
+          </div>
+          <div class="information">
+            <p v-html="speaker.bio"></p>
+          </div>
+        </div>
+
+        <div class="social">
+          <div class="social__icons">
+            <a
+              href="https://www.facebook.com/kyky.artwork/"
+              target="_blank"
+              class="social__icon"
+            >
+              <img src="/icon/dark/facebook.svg" alt="Facebook" />
+            </a>
+
+            <a
+              href="https://www.instagram.com/kyky_otaku/"
+              target="_blank"
+              class="social__icon"
+            >
+              <img src="/icon/dark/instagram.svg" alt="Instagram" />
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -40,18 +77,20 @@ export default {
     }),
   },
   mounted() {
-    console.log(this.$route.params.id);
+    this.speaker_id = this.$route.params.id;
 
-    if (this.$route.params.id == null) {
-      console.error("Error");
-    } else {
-      this.speaker_id = this.$route.params.id;
-      this.processSpeaker(this.speaker_id);
-    }
+    let sessions;
+    let speakers;
 
     if (this.speakers.length === 0) {
-      this.FETCH_SESSIONS();
-      this.FETCH_SPEAKERS();
+      sessions = this.FETCH_SESSIONS();
+      speakers = this.FETCH_SPEAKERS();
+
+      speakers.then((results) => {
+        this.processSpeaker(this.speaker_id);
+      });
+    } else {
+      this.processSpeaker(this.speaker_id);
     }
   },
 };
