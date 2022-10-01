@@ -130,7 +130,7 @@ export default {};
   .global__header {
     .logo {
       .text {
-        font-size: 25px;
+        font-size: 23px;
       }
     }
   }
