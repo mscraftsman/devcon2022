@@ -2,7 +2,7 @@
   <div class="speakers__container">
     <div class="container__fw">
       <div class="title__section">
-        <div class="sub-text">What's on the menu</div>
+        <div class="sub-text">Meet those who drive the change.</div>
         <h2 class="title">
           Speakers
         </h2>
