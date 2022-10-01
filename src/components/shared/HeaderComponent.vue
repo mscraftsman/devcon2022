@@ -19,18 +19,10 @@
         </div>
         <div class="right__block">
           <!-- <router-link :to="{ name: 'Agenda' }" class="header__button light">Agenda</router-link> -->
-          <router-link :to="{ name: 'Community' }" class="header__button light"
-            >Community</router-link
-          >
+          <router-link :to="{ name: 'Community' }" class="header__button light">Community</router-link>
           <!-- <router-link :to="{ name: 'Extras' }" class="header__button light">Extras</router-link> -->
 
-          <a
-            href="https://forms.gle/KdMYMZtqv2GiGDte9"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="header__button"
-            >Register</a
-          >
+          <a href="https://forms.gle/KdMYMZtqv2GiGDte9" target="_blank" rel="noopener noreferrer" class="header__button">Register</a>
         </div>
       </div>
     </div>
@@ -103,6 +95,7 @@ export default {};
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    gap: 10px;
   }
 
   .header__button {
@@ -115,7 +108,6 @@ export default {};
     justify-content: center;
     text-decoration: none;
     font-size: 23px;
-    margin-right: 10px;
     width: 120px;
 
     &.light {
@@ -166,9 +158,9 @@ export default {};
 
     .header__button {
       font-size: 17px;
-
+      width: 80px;
       &.light {
-        width: 140px;
+        width: 80px;
       }
     }
   }

@@ -65,7 +65,7 @@ html {
   margin: 0 auto;
   max-width: 1200px;
   width: 100%;
-  padding: 0 10px;
+  padding: 0 15px;
 }
 
 .container__large__fw {
