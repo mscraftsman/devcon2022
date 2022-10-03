@@ -18,15 +18,18 @@ import TextComponent from "@/components/home/TextComponent";
 // import RegisterComponent from "@/components/home/RegisterComponent";
 
 export default {
+  metaInfo: {
+    title: "Home",
+  },
   name: "Home",
   components: {
     // IntroComponent,
     IntroAnimationComponent,
     FundingComponent,
-    TextComponent
+    TextComponent,
     // ScheduleComponent,
     // RegisterComponent
     // SpeakersComponent
-  }
+  },
 };
 </script>

@@ -16,6 +16,10 @@ import HeaderComponent from "@/components/shared/HeaderComponent.vue";
 import FooterComponent from "@/components/shared/FooterComponent.vue";
 
 export default {
+  metaInfo: {
+    title: "Home",
+    titleTemplate: "%s - Developers Conference 2022 | MSCC",
+  },
   components: {
     HeaderComponent,
     FooterComponent,
