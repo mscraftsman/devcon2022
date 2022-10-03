@@ -2,14 +2,22 @@
   <div class="speaker__container">
     <div class="container__fw">
       <div class="breadcrumbs__container">
-        <router-link :to="{ name: 'Speakers' }" class="speaker--anchor">
-          <div class="icon--wrapper"></div>
-          <div class="link--wrapper">Speakers</div>
-        </router-link>
+        <ul>
+          <li>
+            <router-link :to="{ name: 'Speakers' }" class="speaker--anchor">
+              Back to Speakers
+            </router-link>
+          </li>
+          <li>/</li>
+          <li>{{ speaker.firstName + " " + speaker.lastName }}</li>
+        </ul>
       </div>
-
       <div class="speaker__wrapper">
         <div class="speaker__profile" v-if="speaker != null">
+          <div class="name__block">
+            {{ speaker.firstName }}
+          </div>
+
           <div class="picture__bio--wrapper">
             <div class="picture">
               <img
@@ -127,23 +135,59 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.container__fw {
+  max-width: 700px;
+}
+
 .breadcrumbs__container {
   margin-bottom: 20px;
 
-  a {
-    text-decoration: none;
+  ul {
+    color: black;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 25px;
+    font-family: var(--font-bangers);
+
+    li {
+      display: inline-block;
+      margin-right: 10px;
+
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: var(--platinium);
+      }
+    }
   }
+}
+
+.name__block {
+  font-size: 140px;
+  line-height: 90px;
+  font-family: var(--font-bangers);
+  color: var(--platinium);
+  opacity: 0.2;
+  position: absolute;
+  height: 100px;
+  top: 0;
+  right: 0;
+  transform: translateY(-70px);
 }
 
 .speaker__container {
   padding: 100px 0;
   color: white;
+  position: relative;
 
   .speaker__wrapper {
     background: var(--platinium);
-    max-width: 700px;
+    position: relative;
+    min-height: 500px;
+
     margin: 0 auto;
 
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
@@ -151,7 +195,7 @@ export default {
     border-color: #000;
     padding: 50px;
     padding-bottom: 20px;
-    box-shadow: 0 10px 40px 20px rgba(0, 0, 0, 0.095);
+    box-shadow: 0 10px 40px 20px rgba(0, 0, 0, 0.2);
 
     .speaker__profile {
       .picture__bio--wrapper {
@@ -240,6 +284,23 @@ export default {
 
           img {
             width: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .speaker__container {
+    .speaker__wrapper {
+      .speaker__profile {
+        .picture__bio--wrapper {
+          display: block;
+          text-align: center;
+
+          .picture {
+            margin: 0 0 10px;
           }
         }
       }
