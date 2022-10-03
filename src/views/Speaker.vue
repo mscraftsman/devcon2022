@@ -14,12 +14,12 @@
       </div>
       <div class="speaker__wrapper">
         <div class="speaker__profile" v-if="speaker != null">
-          <div class="name__block">
-            {{ speaker.firstName }}
+          <div class="name__block" v-if="speaker && speaker.firstName">
+            {{ shortenify(speaker.firstName) }}
           </div>
 
           <div class="picture__bio--wrapper">
-            <div class="picture">
+            <div class="picture" v-if="speaker.profilePicture">
               <img
                 :src="speaker.profilePicture"
                 :alt="speaker.firstName + ' ' + speaker.lastName"
@@ -107,6 +107,9 @@ export default {
         return "website";
       }
     },
+    shortenify(text) {
+      return text.length > 8 ? text.substring(0, 8) + ".." : text;
+    },
   },
   computed: {
     ...mapGetters({
@@ -141,6 +144,7 @@ export default {
 
 .breadcrumbs__container {
   margin-bottom: 20px;
+  z-index: 10;
 
   ul {
     color: black;
@@ -151,6 +155,7 @@ export default {
     text-transform: uppercase;
     font-size: 25px;
     font-family: var(--font-bangers);
+    position: relative;
 
     li {
       display: inline-block;
@@ -187,9 +192,7 @@ export default {
     background: var(--platinium);
     position: relative;
     min-height: 500px;
-
     margin: 0 auto;
-
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
     border: 3px solid #000;
     border-color: #000;
@@ -223,7 +226,7 @@ export default {
           font-size: 24px;
           margin: 0;
           margin-bottom: 5px;
-          text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5);
+          text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
         }
         .tagline {
           font-weight: 300;
@@ -292,7 +295,11 @@ export default {
 }
 
 @media (max-width: 768px) {
+  .name__block {
+    font-size: 90px;
+  }
   .speaker__container {
+    padding: 50px 0;
     .speaker__wrapper {
       .speaker__profile {
         .picture__bio--wrapper {
