@@ -8,39 +8,40 @@
         </h2>
       </div>
     </div>
-
-    <div class="page-all-speakers">
-      <article class="comic">
-        <transition name="fade" mode="out-in">
-          <div
-            class="speakers__listing"
-            key="loader"
-            v-if="speakers.length == 0"
-          >
-            <div class="loader">LOADING SPEAKERS</div>
-          </div>
-          <div class="speakers__listing" key="listing" v-else>
-            <router-link
-              class="panel"
-              v-for="speaker in speakers"
-              :key="speaker.id"
-              :to="{ name: 'Speaker', params: { id: speaker.id } }"
-              :alt="speaker.fullName"
-              :title="speaker.fullName + ', ' + speaker.tagLine"
+    <div class="container__large__fw">
+      <div class="page-all-speakers">
+        <article class="comic">
+          <transition name="fade" mode="out-in">
+            <div
+              class="speakers__listing"
+              key="loader"
+              v-if="speakers.length == 0"
             >
-              <p class="text top-left">{{ speaker.tagLine }}</p>
-              <!--          <p class="text bottom-left">{{ speaker.sessions.length }}</p>-->
+              <div class="loader">LOADING SPEAKERS</div>
+            </div>
+            <div class="speakers__listing" key="listing" v-else>
+              <router-link
+                class="panel"
+                v-for="speaker in speakers"
+                :key="speaker.id"
+                :to="{ name: 'Speaker', params: { id: speaker.id } }"
+                :alt="speaker.fullName"
+                :title="speaker.fullName + ', ' + speaker.tagLine"
+              >
+                <p class="text top-left">{{ speaker.tagLine }}</p>
+                <!--          <p class="text bottom-left">{{ speaker.sessions.length }}</p>-->
 
-              <p class="text bottom-right">{{ speaker.fullName }}</p>
-              <img
-                class=" border-2 border-black"
-                :src="speaker.profilePicture"
-                alt
-              />
-            </router-link>
-          </div>
-        </transition>
-      </article>
+                <p class="text bottom-right">{{ speaker.fullName }}</p>
+                <img
+                  class=" border-2 border-black"
+                  :src="speaker.profilePicture"
+                  alt
+                />
+              </router-link>
+            </div>
+          </transition>
+        </article>
+      </div>
     </div>
   </div>
 </template>
@@ -51,6 +52,9 @@ import { mapActions, mapGetters } from "vuex";
 import { time as timeHelper, getDay as getDayHelper } from "@/helpers";
 
 export default {
+  metaInfo: {
+    title: "Speakers",
+  },
   methods: {
     ...mapActions(["FETCH_SESSIONS", "FETCH_SPEAKERS"]),
     getSpeaker(id) {

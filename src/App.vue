@@ -4,7 +4,9 @@
     <HeaderComponent />
     <div class="main__view">
       <main id="main">
-        <router-view />
+        <transition name="fade">
+          <router-view />
+        </transition>
       </main>
     </div>
     <FooterComponent />
@@ -112,6 +114,16 @@ html {
 
 .skip-link:focus {
   top: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 
 @media (max-width: 768px) {
