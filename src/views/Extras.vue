@@ -16,11 +16,12 @@
             </h2>
             <div class="extras__info">
               <p>
-                Thierry Amery is a visual artist, caricature and portrait artist,
-                and visual arts subject leader at Northfields International High
-                School. He developed a unique style of caricatures without much
-                exaggeration as he sees his model through the eyes of a child in
-                only five minutes, one black pen and a paper.
+                Thierry Amery is a visual artist, caricature and portrait
+                artist, and visual arts subject leader at Northfields
+                International High School. He developed a unique style of
+                caricatures without much exaggeration as he sees his model
+                through the eyes of a child in only five minutes, one black pen
+                and a paper.
               </p>
 
               <div class="social__block">
@@ -107,20 +108,19 @@
           ></div>
         </div>
 
-                <div class="extras-block__container">
+        <div class="extras-block__container">
           <div class="extras__description first">
-            <h2 class="extras__title">
-              Cosplay / <span>Stefan Wong Ng</span>
-            </h2>
+            <h2 class="extras__title">Cosplay / <span>Stefan Wong Ng</span></h2>
             <div class="extras__info">
               <p>
-                Cosplay is a passion, we organise gatherings, workshops and events.
-                We provide superheroes for birthdays and private events.
-                We make people dream and reminiscent of their childhood.
-                We communicate through Cosplay Mauritius and Cosplayer for Hire
+                Cosplay is a passion, we organise gatherings, workshops and
+                events. We provide superheroes for birthdays and private events.
+                We make people dream and reminiscent of their childhood. We
+                communicate through Cosplay Mauritius and Cosplayer for Hire
               </p>
               <p>
-                Kage Bunshin Ltd promote cosplay in different ways. What started as a passion turned to be a business model.
+                Kage Bunshin Ltd promote cosplay in different ways. What started
+                as a passion turned to be a business model.
               </p>
             </div>
           </div>
@@ -133,6 +133,14 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  metaInfo: {
+    title: "Extras",
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 .page {

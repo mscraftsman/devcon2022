@@ -87,6 +87,14 @@
   </div>
 </template>
 
+<script>
+export default {
+  metaInfo: {
+    title: "Code of Conduct",
+  },
+};
+</script>
+
 <style lang="scss" scoped>
 .page {
   padding: 40px 10px;
