@@ -18,19 +18,85 @@
           </router-link>
         </div>
         <div class="right__block">
-          <!-- <router-link :to="{ name: 'Agenda' }" class="header__button light">Agenda</router-link> -->
-          <router-link :to="{ name: 'Community' }" class="header__button light">Community</router-link>
-          <!-- <router-link :to="{ name: 'Extras' }" class="header__button light">Extras</router-link> -->
-
-          <a href="https://forms.gle/KdMYMZtqv2GiGDte9" target="_blank" rel="noopener noreferrer" class="header__button">Register</a>
+          <ul>
+            <li
+              v-for="(item, index) in menu_items"
+              :key="index"
+              class="desktop--only"
+            >
+              <router-link
+                @click.native="closeMenu()"
+                :to="{ name: item.name_path }"
+                >{{ item.text }}</router-link
+              >
+            </li>
+            <li>
+              <a
+                href="https://forms.gle/KdMYMZtqv2GiGDte9"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="header__button"
+                >Register</a
+              >
+            </li>
+          </ul>
+          <button
+            class="menu__mobile"
+            :class="{ closed: !menu, opened: menu }"
+            @click="toggleMenu()"
+          >
+            <div class="burger__first"></div>
+            <div class="burger__second"></div>
+            <div class="burger__third"></div>
+          </button>
         </div>
+      </div>
+    </div>
+
+    <div class="mobile__menu--wrapper" v-if="menu">
+      <div class="container__fw">
+        <ul>
+          <li
+            v-for="(item, index) in menu_items"
+            :key="index"
+            class="desktop--only"
+          >
+            <router-link :to="{ name: item.name_path }">{{
+              item.text
+            }}</router-link>
+          </li>
+        </ul>
       </div>
     </div>
   </header>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      menu: false,
+      menu_items: [
+        {
+          name_path: "Community",
+          text: "Community",
+        },
+        {
+          name_path: "Extras",
+          text: "Extras",
+        },
+      ],
+    };
+  },
+  methods: {
+    toggleMenu() {
+      this.menu = !this.menu;
+    },
+    closeMenu() {
+      this.menu = false;
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -47,6 +113,7 @@ export default {};
   .inner__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    height: 70px;
   }
 
   .logo {
@@ -91,29 +158,99 @@ export default {};
     }
   }
 
+  .menu__mobile {
+    width: 40px;
+    height: 40px;
+    border: 0;
+    background: black;
+    position: relative;
+    display: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.opened {
+      .burger__second {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+
+      .burger__first {
+        transform: translateY(10px) rotate(45deg);
+      }
+
+      .burger__third {
+        transform: translateY(-10px) rotate(-45deg);
+      }
+    }
+
+    .burger__first,
+    .burger__second,
+    .burger__third {
+      border-bottom: 4px solid white;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .burger__second {
+      margin-top: 6px;
+    }
+
+    .burger__third {
+      margin-top: 6px;
+    }
+  }
+
   .right__block {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 10px;
-  }
 
-  .header__button {
-    height: 40px;
-    line-height: 40px;
-    background: red;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 23px;
-    width: 120px;
+    ul {
+      display: inline-flex;
+      align-items: center;
 
-    &.light {
-      background: var(--titanium);
-      color: white;
-      width: 140px;
+      li {
+        margin-right: 25px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &.desktop--only {
+          display: inline-flex;
+        }
+
+        a {
+          text-decoration: none;
+          color: white;
+          font-size: 22px;
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            color: var(--bronze);
+            font-size: 24px;
+          }
+
+          &.header__button {
+            height: 40px;
+            line-height: 40px;
+            background: red;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 23px;
+            width: 110px;
+
+            &:hover {
+              color: white;
+            }
+          }
+        }
+      }
     }
   }
 
@@ -126,12 +263,52 @@ export default {};
   }
 }
 
+.mobile__menu--wrapper {
+  background: black;
+  padding: 20px 0;
+  display: none;
+
+  ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: block;
+      a {
+        display: block;
+        font-size: 20px;
+        color: white;
+        padding: 15px 0;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
 @media (max-width: 768px) {
+  .mobile__menu--wrapper {
+    display: block;
+  }
   .global__header {
     .logo {
       .text {
         font-size: 23px;
       }
+    }
+
+    .right__block {
+      ul {
+        li {
+          &.desktop--only {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .menu__mobile {
+      display: block;
     }
   }
 }
