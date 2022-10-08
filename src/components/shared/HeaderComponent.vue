@@ -19,11 +19,16 @@
         </div>
         <div class="right__block">
           <ul>
-            <li>
-              <router-link :to="{ name: 'Community' }">Community</router-link>
-            </li>
-            <li>
-              <router-link :to="{ name: 'Extras' }">Extras</router-link>
+            <li
+              v-for="(item, index) in menu_items"
+              :key="index"
+              class="desktop--only"
+            >
+              <router-link
+                @click.native="closeMenu()"
+                :to="{ name: item.name_path }"
+                >{{ item.text }}</router-link
+              >
             </li>
             <li>
               <a
@@ -47,6 +52,22 @@
         </div>
       </div>
     </div>
+
+    <div class="mobile__menu--wrapper" v-if="menu">
+      <div class="container__fw">
+        <ul>
+          <li
+            v-for="(item, index) in menu_items"
+            :key="index"
+            class="desktop--only"
+          >
+            <router-link :to="{ name: item.name_path }">{{
+              item.text
+            }}</router-link>
+          </li>
+        </ul>
+      </div>
+    </div>
   </header>
 </template>
 
@@ -55,11 +76,24 @@ export default {
   data() {
     return {
       menu: false,
+      menu_items: [
+        {
+          name_path: "Community",
+          text: "Community",
+        },
+        {
+          name_path: "Extras",
+          text: "Extras",
+        },
+      ],
     };
   },
   methods: {
     toggleMenu() {
       this.menu = !this.menu;
+    },
+    closeMenu() {
+      this.menu = false;
     },
   },
 };
@@ -79,6 +113,7 @@ export default {
   .inner__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    height: 70px;
   }
 
   .logo {
@@ -127,8 +162,9 @@ export default {
     width: 40px;
     height: 40px;
     border: 0;
-    background: var(--platinium);
+    background: black;
     position: relative;
+    display: none;
 
     &:hover {
       cursor: pointer;
@@ -182,6 +218,10 @@ export default {
           margin-right: 0;
         }
 
+        &.desktop--only {
+          display: inline-flex;
+        }
+
         a {
           text-decoration: none;
           color: white;
@@ -223,12 +263,52 @@ export default {
   }
 }
 
+.mobile__menu--wrapper {
+  background: black;
+  padding: 20px 0;
+  display: none;
+
+  ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: block;
+      a {
+        display: block;
+        font-size: 20px;
+        color: white;
+        padding: 15px 0;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
 @media (max-width: 768px) {
+  .mobile__menu--wrapper {
+    display: block;
+  }
   .global__header {
     .logo {
       .text {
         font-size: 23px;
       }
+    }
+
+    .right__block {
+      ul {
+        li {
+          &.desktop--only {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .menu__mobile {
+      display: block;
     }
   }
 }
