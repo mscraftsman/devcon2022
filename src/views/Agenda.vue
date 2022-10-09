@@ -1,19 +1,19 @@
 <template>
-  <div class="container__fw page">
-    <AgendaSessionize />
-  </div>
+  <AgendaSessionize />
 </template>
 
 <script>
-import AgendaSessionize from '@/views/AgendaSessionize'
+import AgendaSessionize from "@/views/AgendaSessionize";
 
 export default {
+  metaInfo: {
+    title: "Agenda",
+  },
   components: {
-    AgendaSessionize
-  }
-}
+    AgendaSessionize,
+  },
+};
 </script>
-
 
 <style lang="scss" scoped>
 .page {

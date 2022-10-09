@@ -1,219 +1,223 @@
 // prettier-ignore
 <template>
   <div class="schedule__container">
-    <div class="schedule__superheros">
-      <div class="container__fw">
-        <div class="title__section">
-          <div class="sub-text">What's on the menu</div>
-          <h2 class="title">
-            Schedule
-            <span class="gmt">(GMT +4)</span>
-          </h2>
-        </div>
-
-        <!-- <img class="schedule-wf" src="/schedule.jpg" alt /> -->
-
-        <div class="schedule__parent__container">
-          <div class="schedule-container">
-            <div class="date-track">
-              <div
-                class="day-item"
-                :class="{ active: currentDay == 0 }"
-                @click="currentDay = 0"
-              >
-                Day 1
-              </div>
-              <div
-                class="day-item"
-                :class="{ active: currentDay == 1 }"
-                @click="currentDay = 1"
-              >
-                Day 2
-              </div>
-              <div
-                class="day-item"
-                :class="{ active: currentDay == 2 }"
-                @click="currentDay = 2"
-              >
-                Day 3
-              </div>
+    <div class="container__large__fw">
+      <div class="schedule__superheros">
+        <div class="container__fw">
+          <div class="title__section">
+            <div class="sub-text">What's on the menu</div>
+            <h2 class="title">
+              Agenda
+            </h2>
+          </div>
+          <!-- <img class="schedule-wf" src="/schedule.jpg" alt /> -->
+          <div class="schedule__parent__container">
+            <div class="date--container">
+              <div class="date">22 November</div>
+              <div class="date">23 November</div>
+              <div class="date">24 November</div>
             </div>
+            <div class="schedule-container">
+              <div class="date-track">
+                <div
+                  class="day-item"
+                  :class="{ active: currentDay == 0 }"
+                  @click="currentDay = 0"
+                >
+                  Day 1
+                </div>
+                <div
+                  class="day-item"
+                  :class="{ active: currentDay == 1 }"
+                  @click="currentDay = 1"
+                >
+                  Day 2
+                </div>
+                <div
+                  class="day-item"
+                  :class="{ active: currentDay == 2 }"
+                  @click="currentDay = 2"
+                >
+                  Day 3
+                </div>
+              </div>
 
-            <div class="room-track">
-              <button title="prev" v-if="isMobile" @click="prev">&lt;</button>
-              <css-grid
-                class="room-name"
-                :columns="currentGrid.columns"
-                :rows="currentGrid.rows"
-                :areas="currentGrid.areas"
-              >
-                <css-grid-item
-                  :area="room"
-                  class="room-item uppercase text-sm"
-                  :data-room="index"
-                  v-for="(room, index) in displayedRooms"
-                  :key="index"
-                  ><a
-                    :href="roomUrls[room]"
-                    class="room-item"
+              <div class="room-track">
+                <button title="prev" v-if="isMobile" @click="prev">&lt;</button>
+                <css-grid
+                  class="room-name"
+                  :columns="currentGrid.columns"
+                  :rows="currentGrid.rows"
+                  :areas="currentGrid.areas"
+                >
+                  <css-grid-item
+                    :area="room"
+                    class="room-item uppercase text-sm"
                     :data-room="index"
-                    alt="Youtube live stream"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >{{ roomRepo[room] }}</a
-                  >
-                </css-grid-item>
-              </css-grid>
-              <button title="next" v-if="isMobile" @click="next">&gt;</button>
-            </div>
+                    v-for="(room, index) in displayedRooms"
+                    :key="index"
+                    >{{ roomRepo[room] }}
+                  </css-grid-item>
+                </css-grid>
+                <button title="next" v-if="isMobile" @click="next">&gt;</button>
+              </div>
 
-            <div class="programme-track">
-              <css-grid
-                :columns="currentGrid.columns"
-                :rows="currentGrid.rows"
-                :areas="currentGrid.areas"
-                class="programme-track-container"
-                :gap="isMobile ? '4px' : '10px'"
-              >
-                <!-- Time -->
-                <css-grid-item
-                  area="Time"
-                  class="time-item"
-                  v-for="(time, index) in times.slice(timeStart, timeEnd)"
-                  :style="timeStartCoordinate(time)"
-                  :key="index"
+              <div class="programme-track">
+                <css-grid
+                  :columns="currentGrid.columns"
+                  :rows="currentGrid.rows"
+                  :areas="currentGrid.areas"
+                  class="programme-track-container"
+                  :gap="isMobile ? '4px' : '10px'"
                 >
-                  <span>{{ time }}</span>
-                </css-grid-item>
-
-                <!-- Programmes -->
-                <css-grid-item
-                  :area="'r' + programme.roomId"
-                  class="programme-item box"
-                  v-for="(programme, index) in displayedSessions"
-                  :style="programmeStartCoordinate(programme)"
-                  :data-index="index"
-                  :room-id="getRoomId(programme)"
-                  :key="index"
-                  :data-element="isKeynote(programme)"
-                >
-                  <div
-                    class="session__block"
-                    @click="openModal(programme.id, getRoomId(programme))"
+                  <!-- Time -->
+                  <css-grid-item
+                    area="Time"
+                    class="time-item"
+                    v-for="(time, index) in times.slice(timeStart, timeEnd)"
+                    :style="timeStartCoordinate(time)"
+                    :key="time.startsAt + '-' + index"
                   >
-                    <div class="title">{{ checkLength(programme.title) }}</div>
+                    <div class="time--slot">{{ time }}</div>
+                  </css-grid-item>
 
+                  <!-- Programmes -->
+                  <css-grid-item
+                    :area="'r' + programme.roomId"
+                    class="programme-item box"
+                    v-for="(programme, index) in displayedSessions"
+                    :style="programmeStartCoordinate(programme)"
+                    :data-index="index"
+                    :room-id="getRoomId(programme)"
+                    :key="index"
+                    :data-element="isKeynote(programme)"
+                  >
                     <div
-                      v-if="programme.speakers.length > 0"
-                      class="speaker__info"
+                      class="session__block"
+                      @click="openModal(programme.id, getRoomId(programme))"
                     >
-                      <template
-                        v-if="
-                          programme.speakers && programme.speakers.length == 1
-                        "
+                      <div class="title">
+                        {{ checkLength(programme.title) }}
+                      </div>
+
+                      <div
+                        v-if="programme.speakers.length > 0"
+                        class="speaker__info"
                       >
-                        <div
-                          v-for="(speaker, index) in programme.speakers"
-                          :key="index"
-                          class="speaker"
+                        <template
+                          v-if="
+                            programme.speakers && programme.speakers.length == 1
+                          "
                         >
-                          <div class="image">
-                            <img
-                              :src="speakersById[speaker.id].profilePicture"
-                              :alt="speaker.name"
-                            />
+                          <div
+                            v-for="(speaker, index) in programme.speakers"
+                            :key="index"
+                            class="speaker"
+                          >
+                            <div
+                              class="image"
+                              v-if="speakersById[speaker.id].profilePicture"
+                            >
+                              <img
+                                :src="speakersById[speaker.id].profilePicture"
+                                :alt="speaker.name"
+                              />
+                            </div>
+                            <div class="info">
+                              {{ checkNameLength(speaker.name) }}
+                            </div>
                           </div>
-                          <div class="info">
-                            {{ checkNameLength(speaker.name) }}
-                          </div>
-                        </div>
-                      </template>
-                      <template
-                        v-if="
-                          programme.speakers && programme.speakers.length > 1
-                        "
-                      >
-                        <div
-                          v-for="(speaker, index) in programme.speakers"
-                          :key="index"
-                          class="speaker multiple"
+                        </template>
+                        <template
+                          v-if="
+                            programme.speakers && programme.speakers.length > 1
+                          "
                         >
-                          <div class="image">
-                            <img
-                              :src="speakersById[speaker.id].profilePicture"
-                              :alt="speaker.name"
-                              v-tooltip.top-center="speaker.name"
-                            />
-                            <!-- <div class="pop">
+                          <div
+                            v-for="(speaker, index) in programme.speakers"
+                            :key="index"
+                            class="speaker multiple"
+                          >
+                            <div
+                              class="image"
+                              v-if="speakersById[speaker.id].profilePicture"
+                            >
+                              <img
+                                :src="speakersById[speaker.id].profilePicture"
+                                :alt="speaker.name"
+                                v-tooltip.top-center="speaker.name"
+                              />
+                              <!-- <div class="pop">
                               {{ speaker.name }}
                             </div>-->
+                            </div>
                           </div>
-                        </div>
-                      </template>
+                        </template>
+                      </div>
                     </div>
-                  </div>
-                  <!-- <router-link
+                    <!-- <router-link
                     :to="{ name: 'session', params: { id: programme.id } }"
                     class="session__block"
                   >
                   </router-link>-->
-                </css-grid-item>
-              </css-grid>
-            </div>
+                  </css-grid-item>
+                </css-grid>
+              </div>
 
-            <div class="room-track">
-              <button title="prev" v-if="isMobile" @click="prev">&lt;</button>
-              <css-grid
-                class="room-name"
-                :columns="currentGrid.columns"
-                :rows="currentGrid.rows"
-                :areas="currentGrid.areas"
-              >
-                <css-grid-item
-                  :area="room"
-                  class="room-item uppercase text-sm"
-                  :data-room="index"
-                  v-for="(room, index) in displayedRooms"
-                  :key="index"
-                  ><a
-                    :href="roomUrls[room]"
-                    class="room-item"
+              <div class="room-track">
+                <button title="prev" v-if="isMobile" @click="prev">&lt;</button>
+                <css-grid
+                  class="room-name"
+                  :columns="currentGrid.columns"
+                  :rows="currentGrid.rows"
+                  :areas="currentGrid.areas"
+                >
+                  <css-grid-item
+                    :area="room"
+                    class="room-item uppercase text-sm"
                     :data-room="index"
-                    alt="Youtube live stream"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >{{ roomRepo[room] }}</a
-                  >
-                </css-grid-item>
-              </css-grid>
-              <button title="next" v-if="isMobile" @click="next">&gt;</button>
-            </div>
+                    v-for="(room, index) in displayedRooms"
+                    :key="index"
+                    ><a
+                      :href="roomUrls[room]"
+                      class="room-item"
+                      :data-room="index"
+                      alt="Youtube live stream"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >{{ roomRepo[room] }}</a
+                    >
+                  </css-grid-item>
+                </css-grid>
+                <button title="next" v-if="isMobile" @click="next">&gt;</button>
+              </div>
 
-            <div class="date-track">
-              <div
-                class="day-item"
-                :class="{ active: currentDay == 0 }"
-                @click="currentDay = 0"
-              >
-                Day 1
-              </div>
-              <div
-                class="day-item"
-                :class="{ active: currentDay == 1 }"
-                @click="currentDay = 1"
-              >
-                Day 2
-              </div>
-              <div
-                class="day-item"
-                :class="{ active: currentDay == 2 }"
-                @click="currentDay = 2"
-              >
-                Day 3
+              <div class="date-track">
+                <div
+                  class="day-item"
+                  :class="{ active: currentDay == 0 }"
+                  @click="currentDay = 0"
+                >
+                  Day 1
+                </div>
+                <div
+                  class="day-item"
+                  :class="{ active: currentDay == 1 }"
+                  @click="currentDay = 1"
+                >
+                  Day 2
+                </div>
+                <div
+                  class="day-item"
+                  :class="{ active: currentDay == 2 }"
+                  @click="currentDay = 2"
+                >
+                  Day 3
+                </div>
               </div>
             </div>
+            <ViewportListener v-model="viewport" />
           </div>
-          <ViewportListener v-model="viewport" />
         </div>
       </div>
     </div>
@@ -261,8 +265,8 @@
             :class="[
               'author__information',
               {
-                multiple: modal_info.speakers && modal_info.speakers.length > 1
-              }
+                multiple: modal_info.speakers && modal_info.speakers.length > 1,
+              },
             ]"
           >
             <div
@@ -271,7 +275,13 @@
               :key="index"
             >
               <div class="profile__name">
-                <div class="image">
+                <div
+                  class="image"
+                  v-if="
+                    speakersById[speaker.id] &&
+                      speakersById[speaker.id].profilePicture
+                  "
+                >
                   <img
                     :src="speakersById[speaker.id].profilePicture"
                     :alt="speaker.name"
@@ -385,39 +395,44 @@ export default {
         "14:00",
         "15:00",
         "16:00",
-        "17:00"
       ],
       MINUTES_TO_EIGHT_OCLOCK: 9 * 60,
       timeStart: 0,
       timeSpan: 48,
       timeScale: 5,
-      rooms: ["r12900", "r12901", "r12902", "r12903"],
+      rooms: ["r22486", "r22487", "r22488", "r28497"],
       roomRepo: {
-        r12900: "Batcave",
-        r12901: "Avengers Tower",
-        r12902: "New Asgard",
-        r12903: "Kryptone"
+        r22486: "Olympia",
+        r22487: "Smallville",
+        r22488: "Wakanda",
+        r28497: "Atlantis (UGs)",
       },
       roomUrls: {
-        r12900: "https://youtu.be/L2f2fb2ZBoE",
-        r12901: "https://youtu.be/m4H9MakPvus",
-        r12902: "https://youtu.be/wiVlUzLaiJg",
-        r12903: "https://youtu.be/boHc0HfLWSc"
+        r22486: "https://youtu.be/L2f2fb2ZBoE",
+        r22487: "https://youtu.be/m4H9MakPvus",
+        r22488: "https://youtu.be/wiVlUzLaiJg",
+        r28497: "https://youtu.be/boHc0HfLWSc",
       },
       availableRooms: [
-        { id: "r12900", index: 0 },
-        { id: "r12901", index: 1 },
-        { id: "r12902", index: 2 },
-        { id: "r12903", index: 3 }
+        { id: "r22486", index: 0 },
+        { id: "r22487", index: 1 },
+        { id: "r22488", index: 2 },
+        { id: "r28497", index: 3 },
       ],
       currentDay: 0,
-      currentRoom: { id: "r12900", index: 0 },
-      modal_info: {}
+      currentRoom: { id: "r22486", index: 0 },
+      modal_info: {},
     };
   },
   methods: {
     time: timeHelper,
     getDay: getDayHelper,
+    getRandomId() {
+      let randomID = Math.random()
+        .toString(36)
+        .substring(7);
+      return window.performance.now() + "-" + randomID;
+    },
     openModal(id, room) {
       let info = this.sessionsById[id];
       this.modal_info = info;
@@ -453,7 +468,7 @@ export default {
 
       return {
         top: offsetResult * (this.timeScale * 0.6) + "px",
-        height: duration * (this.timeScale * 0.6) + "px"
+        height: duration * (this.timeScale * 0.6) + "px",
       };
     },
     // Takes a programme object
@@ -462,8 +477,8 @@ export default {
     },
     isKeynote(programme) {
       if (
-        programme.startsAt == "2022-02-17T09:00:00" &&
-        programme.roomId == "12900"
+        programme.startsAt == "2022-11-22T09:00:00" &&
+        programme.roomId == "22486"
       ) {
         return "keynote";
       } else {
@@ -489,7 +504,7 @@ export default {
       let duration = endCoordinate - startCoordinate;
       return {
         top: startCoordinate * (this.timeScale * 0.6) + "px",
-        height: duration * (this.timeScale * 0.73) + "px"
+        height: duration * (this.timeScale * 0.73) + "px",
       };
     },
     next() {
@@ -499,7 +514,7 @@ export default {
       this.changeRoom(false);
     },
     changeRoom(next) {
-      const currentIndex = this.availableRooms.findIndex(room => {
+      const currentIndex = this.availableRooms.findIndex((room) => {
         return room.id === this.currentRoom.id;
       });
       const prev = !next;
@@ -524,7 +539,7 @@ export default {
         this.currentRoom = this.availableRooms[prevIndex];
         return;
       }
-    }
+    },
   },
   computed: {
     timeEnd() {
@@ -534,7 +549,7 @@ export default {
       sessions: "getSessions",
       speakers: "getSpeakers",
       speakersById: "getSpeakersById",
-      sessionsById: "getSessionsById"
+      sessionsById: "getSessionsById",
     }),
     currentDaySessions() {
       let result = null;
@@ -551,13 +566,13 @@ export default {
         return {
           columns: ["50px", "1fr"],
           rows: ["1fr"],
-          areas: [["Time", this.currentRoom.id]]
+          areas: [["Time", this.currentRoom.id]],
         };
       }
       return {
         columns: ["50px", "1fr", "1fr", "1fr", "1fr"],
         rows: ["1fr"],
-        areas: [["Time", "r12900", "r12901", "r12902", "r12903"]]
+        areas: [["Time", "r22486", "r22487", "r22488", "r28497"]],
       };
     },
     displayedRooms() {
@@ -572,7 +587,7 @@ export default {
         return [];
       }
       if (this.isMobile) {
-        return this.currentDaySessions.filter(session => {
+        return this.currentDaySessions.filter((session) => {
           // * Keep coercion (`==` instead of `===`) here. Please.
           // * Processing `this.currentRoom` directly here to trigger reactivity.
           // * The update is not triggered when declared in a variable.
@@ -580,7 +595,7 @@ export default {
         });
       }
       return this.currentDaySessions;
-    }
+    },
   },
   mounted() {
     // this.fetchSessions();
@@ -588,15 +603,15 @@ export default {
   components: {
     CssGrid,
     CssGridItem,
-    ViewportListener
+    ViewportListener,
   },
   async created() {
     const stats = this.$store.dispatch("FETCH_STATS");
-    const sponsors = this.$store.dispatch("FETCH_SPONSORS");
+    // const sponsors = this.$store.dispatch("FETCH_SPONSORS");
     const speakers = this.$store.dispatch("FETCH_SPEAKERS");
     const sessions = this.$store.dispatch("FETCH_SESSIONS");
     const credits = this.$store.dispatch("FETCH_CREDITS");
-    const promises = [stats, sponsors, speakers, sessions, credits];
+    const promises = [stats, speakers, sessions, credits];
     if (!Promise.allSettled) {
       try {
         await Promise.all(promises);
@@ -607,7 +622,7 @@ export default {
       return;
     }
     Promise.allSettled(promises);
-  }
+  },
 };
 </script>
 
@@ -683,6 +698,16 @@ export default {
   }
 }
 
+.date--container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 15px;
+  .date {
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
 .schedule-container {
   --sess-height: 100px;
 
@@ -692,7 +717,7 @@ export default {
 
   .date-track {
     color: white;
-    margin-bottom: 25px;
+    margin-bottom: 40px;
 
     .day-item {
       width: 100%;
@@ -700,7 +725,7 @@ export default {
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 60px;
+      height: 65px;
       font-family: var(--font-bangers);
       font-size: 30px;
       border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
@@ -736,8 +761,8 @@ export default {
     font-family: var(--font-bangers);
     font-size: 25px;
     height: 50px;
-    border-bottom: 2px solid black;
-    margin-bottom: 10px;
+    border-bottom: 3px solid black;
+    margin-bottom: 20px;
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 
     .room-item {
@@ -761,7 +786,7 @@ export default {
 
   .programme-track {
     // background: green;
-    height: 1630px;
+    height: 1475px;
     /*overflow-y: scroll;*/
     .programme-track-container {
       /*scroll-snap-type: y proximity;*/
@@ -782,7 +807,7 @@ export default {
   /*border: 1px solid black;*/
 
   &[data-element="keynote"] {
-    grid-area: r12900 / r12900 / r12903 / r12903 !important;
+    grid-area: r22486 / r22486 / r28497 / r28497 !important;
   }
 }
 
@@ -794,15 +819,16 @@ export default {
   align-items: center;
   justify-content: center;
   font-family: var(--font-bangers);
-  font-size: 24px;
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
   border: solid #000;
   border-color: #000;
   height: var(--sess-height);
   transform: scale(0.95);
 
-  span {
+  .time--slot {
     transform: rotate(-90deg);
+    width: 180px;
+    font-size: 24px;
   }
 
   &:nth-child(4n + 1) {
@@ -951,7 +977,7 @@ export default {
   //   border-radius: 45px 55px 5px 5px/15px 15px 15px 155px;
   // }
 
-  &[room-id="12900"] {
+  &[room-id="22486"] {
     .session__block {
       background: url("/red_bg.png");
       background-position: center center;
@@ -976,7 +1002,7 @@ export default {
       }
     }
   }
-  &[room-id="12901"] {
+  &[room-id="22487"] {
     .session__block {
       background: url("/blue_bg.png");
       background-position: center center;
@@ -1001,7 +1027,7 @@ export default {
       }
     }
   }
-  &[room-id="12902"] {
+  &[room-id="22488"] {
     .session__block {
       background: url("/yellow_bg.png");
       background-position: center center;
@@ -1028,7 +1054,7 @@ export default {
       }
     }
   }
-  &[room-id="12903"] {
+  &[room-id="28497"] {
     .session__block {
       background: url("/green_bg.png");
       background-position: center center;
@@ -1285,7 +1311,7 @@ export default {
     }
   }
 
-  &.r12900 {
+  &.r22486 {
     .vm--modal {
       .content {
         .left__wrapper {
