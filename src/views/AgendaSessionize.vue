@@ -68,7 +68,7 @@
                   :rows="currentGrid.rows"
                   :areas="currentGrid.areas"
                   class="programme-track-container"
-                  :gap="isMobile ? '4px' : '10px'"
+                  :gap="isMobile ? '4px' : '12px'"
                 >
                   <!-- Time -->
                   <css-grid-item
@@ -164,7 +164,7 @@
                 </css-grid>
               </div>
 
-              <div class="room-track">
+              <!-- <div class="room-track">
                 <button title="prev" v-if="isMobile" @click="prev">&lt;</button>
                 <css-grid
                   class="room-name"
@@ -174,7 +174,7 @@
                 >
                   <css-grid-item
                     :area="room"
-                    class="room-item uppercase text-sm"
+                    class="room-item"
                     :data-room="index"
                     v-for="(room, index) in displayedRooms"
                     :key="index"
@@ -213,6 +213,17 @@
                   @click="currentDay = 2"
                 >
                   Day 3
+                </div>
+              </div> -->
+
+              <div class="sponsor__message">
+                <div class="message" v-if="currentDay == 1">
+                  Happy Hour sponsored by Spoon Consulting on the 22nd of
+                  November 2022 from 17hr30 to 19hr30
+                </div>
+                <div class="message" v-if="currentDay == 2">
+                  Happy Hour sponsored by Alludo on the 23rd of November 2022
+                  from 17hr30 to 19hr30.
                 </div>
               </div>
             </div>
@@ -387,18 +398,29 @@ export default {
       programmes: null,
       schedule_height: 50,
       times: [
+        "08:00",
+        "08:30",
         "09:00",
+        "09:30",
         "10:00",
+        "10:30",
         "11:00",
+        "11:30",
         "12:00",
+        "12:30",
         "13:00",
+        "13:30",
         "14:00",
+        "14:30",
         "15:00",
+        "15:30",
         "16:00",
+        "16:30",
+        "17:00",
       ],
-      MINUTES_TO_EIGHT_OCLOCK: 9 * 60,
+      MINUTES_TO_EIGHT_OCLOCK: 8 * 60,
       timeStart: 0,
-      timeSpan: 48,
+      timeSpan: 50,
       timeScale: 5,
       rooms: ["r22486", "r22487", "r22488", "r28497"],
       roomRepo: {
@@ -462,8 +484,8 @@ export default {
       let minutes = parseInt(temp[1]);
       let hours = parseInt(temp[0]) * 60;
       let result = hours + minutes;
-      // let duration = "30";
-      let duration = "60";
+      let duration = "30";
+      // let duration = "60";
       const offsetResult = result - this.MINUTES_TO_EIGHT_OCLOCK;
 
       return {
@@ -477,8 +499,12 @@ export default {
     },
     isKeynote(programme) {
       if (
-        programme.startsAt == "2022-11-22T09:00:00" &&
-        programme.roomId == "22486"
+        (programme.startsAt == "2022-11-22T10:00:00" &&
+          programme.roomId == "22486") ||
+        (programme.startsAt == "2022-11-22T08:30:00" &&
+          programme.roomId == "22486") ||
+        (programme.startsAt == "2022-11-24T15:30:00" &&
+          programme.roomId == "22486")
       ) {
         return "keynote";
       } else {
@@ -564,13 +590,13 @@ export default {
     currentGrid() {
       if (this.isMobile) {
         return {
-          columns: ["50px", "1fr"],
+          columns: ["70px", "1fr"],
           rows: ["1fr"],
           areas: [["Time", this.currentRoom.id]],
         };
       }
       return {
-        columns: ["50px", "1fr", "1fr", "1fr", "1fr"],
+        columns: ["80px", "1fr", "1fr", "1fr", "1fr"],
         rows: ["1fr"],
         areas: [["Time", "r22486", "r22487", "r22488", "r28497"]],
       };
@@ -627,6 +653,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.sponsor__message {
+  .message {
+    font-family: var(--font-bangers);
+    font-size: 30px;
+    text-align: center;
+    max-width: 60%;
+    margin: 0 auto;
+  }
+}
 .schedule__container {
   --red: #f53f32;
   --blue: #14a0c7;
@@ -642,7 +677,7 @@ export default {
 
   .schedule__superheros {
     width: 100%;
-    background: url("/superhero-left.png"), url("/superhero-right.png");
+    // background: url("/superhero-left.png"), url("/superhero-right.png");
     background-repeat: no-repeat;
     background-size: 200px, 200px;
     background-position: center left, bottom right;
@@ -786,10 +821,11 @@ export default {
 
   .programme-track {
     // background: green;
-    height: 1475px;
+    height: 1700px;
     /*overflow-y: scroll;*/
     .programme-track-container {
       /*scroll-snap-type: y proximity;*/
+      position: relative;
     }
   }
 }
@@ -808,41 +844,57 @@ export default {
 
   &[data-element="keynote"] {
     grid-area: r22486 / r22486 / r28497 / r28497 !important;
+
+    .session__block {
+      background: var(--red) !important;
+
+      .title {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white !important;
+      }
+    }
   }
 }
 
 .time-item {
   position: relative;
-  background: black;
+  background: transparent;
   color: black;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   font-family: var(--font-bangers);
-  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-  border: solid #000;
-  border-color: #000;
-  height: var(--sess-height);
-  transform: scale(0.95);
+  // border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  // border: solid #000;
+  // border-color: #000;
+  // height: var(--sess-height);
+  // transform: scale(0.95);
 
   .time--slot {
-    transform: rotate(-90deg);
-    width: 180px;
+    // transform: rotate(-90deg);
+    // width: 180px;
     font-size: 24px;
   }
 
-  &:nth-child(4n + 1) {
-    background: var(--red);
+  &:nth-child(even) {
+    opacity: 0.4;
   }
-  &:nth-child(4n + 2) {
-    background: var(--blue);
-  }
-  &:nth-child(4n + 3) {
-    background: var(--green);
-  }
-  &:nth-child(4n + 4) {
-    background: var(--yellow);
-  }
+
+  // &:nth-child(4n + 1) {
+  //   color: var(--red);
+  // }
+  // &:nth-child(4n + 2) {
+  //   color: var(--blue);
+  // }
+  // &:nth-child(4n + 3) {
+  //   color: var(--green);
+  // }
+  // &:nth-child(4n + 4) {
+  //   color: var(--yellow);
+  // }
 }
 .room-item {
   height: 30px;
@@ -872,6 +924,7 @@ export default {
   background: white;
   color: black;
   cursor: pointer;
+  box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.1);
 
   a {
     text-decoration: none;
