@@ -375,13 +375,13 @@
                   <img src="/funding/spoon.png" alt="Spoon Consulting" />
                 </a>
               </div>
-              <div class="item logo--lasentinelle">
+              <div class="item">
                 <a
-                  href="https://www.corel.com/"
+                  href="https://www.alludo.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="/funding/corel.png" alt="Corel" />
+                  <img src="/funding/alludo.png" alt="Alludo" />
                 </a>
               </div>
             </div>
