@@ -7,11 +7,11 @@ import AgendaSessionize from "@/views/AgendaSessionize";
 
 export default {
   metaInfo: {
-    title: "Agenda",
+    title: "Agenda"
   },
   components: {
-    AgendaSessionize,
-  },
+    AgendaSessionize
+  }
 };
 </script>
 

@@ -137,8 +137,8 @@
 <script>
 export default {
   metaInfo: {
-    title: "Extras",
-  },
+    title: "Extras"
+  }
 };
 </script>
 

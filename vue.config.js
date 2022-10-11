@@ -2,9 +2,9 @@ module.exports = {
   pages: {
     index: {
       // entry for the page
-      entry: 'src/main.js',
-      title: 'Developers Conference 2022 | MSCC',
-    },
+      entry: "src/main.js",
+      title: "Developers Conference 2022 | MSCC"
+    }
   },
   chainWebpack(config) {
     // Only convert .svg files that are imported by these files as Vue component

@@ -92,9 +92,12 @@
                     :key="index"
                     :data-element="isKeynote(programme)"
                   >
-                    <div
+                    <router-link
                       class="session__block"
-                      @click="openModal(programme.id, getRoomId(programme))"
+                      :to="{
+                        name: 'AgendaSingle',
+                        params: { id: programme.id },
+                      }"
                     >
                       <div class="title">
                         {{ checkLength(programme.title) }}
@@ -154,7 +157,7 @@
                           </div>
                         </template>
                       </div>
-                    </div>
+                    </router-link>
                     <!-- <router-link
                     :to="{ name: 'session', params: { id: programme.id } }"
                     class="session__block"
@@ -217,13 +220,27 @@
               </div> -->
 
               <div class="sponsor__message">
-                <div class="message" v-if="currentDay == 1">
-                  Happy Hour sponsored by Spoon Consulting on the 22nd of
-                  November 2022 from 17hr30 to 19hr30
+                <div class="message" v-if="currentDay == 0">
+                  <p>Happy Hour sponsored by</p>
+                  <a
+                    href="https://www.spoonconsulting.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src="/funding/spoon.png" alt="Spoon Consulting" />
+                  </a>
+                  <p>between 17hr30 to 19hr30</p>
                 </div>
-                <div class="message" v-if="currentDay == 2">
-                  Happy Hour sponsored by Alludo on the 23rd of November 2022
-                  from 17hr30 to 19hr30.
+                <div class="message" v-if="currentDay == 1">
+                  <p>Happy Hour sponsored by</p>
+                  <a
+                    href="https://www.corel.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src="/funding/corel.png" alt="Corel" />
+                  </a>
+                  <p>between 17hr30 to 19hr30</p>
                 </div>
               </div>
             </div>
@@ -499,14 +516,17 @@ export default {
     },
     isKeynote(programme) {
       if (
+        programme.startsAt == "2022-11-22T08:30:00" &&
+        programme.roomId == "22486"
+      ) {
+        return "keynote";
+      } else if (
         (programme.startsAt == "2022-11-22T10:00:00" &&
-          programme.roomId == "22486") ||
-        (programme.startsAt == "2022-11-22T08:30:00" &&
           programme.roomId == "22486") ||
         (programme.startsAt == "2022-11-24T15:30:00" &&
           programme.roomId == "22486")
       ) {
-        return "keynote";
+        return "opening";
       } else {
         return "notkeynote";
       }
@@ -660,6 +680,16 @@ export default {
     text-align: center;
     max-width: 60%;
     margin: 0 auto;
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      img {
+        max-height: 120px;
+      }
+    }
   }
 }
 .schedule__container {
@@ -847,6 +877,22 @@ export default {
 
     .session__block {
       background: var(--red) !important;
+
+      .title {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white !important;
+      }
+    }
+  }
+
+  &[data-element="opening"] {
+    grid-area: r22486 / r22486 / r28497 / r28497 !important;
+
+    .session__block {
+      background: var(--blue) !important;
 
       .title {
         height: 100%;
@@ -1381,7 +1427,7 @@ export default {
       }
     }
   }
-  &.r12901 {
+  &.r22487 {
     .vm--modal {
       .content {
         .left__wrapper {
@@ -1398,7 +1444,7 @@ export default {
       }
     }
   }
-  &.r12902 {
+  &.r22488 {
     .vm--modal {
       .content {
         .left__wrapper {
@@ -1435,7 +1481,7 @@ export default {
       }
     }
   }
-  &.r12903 {
+  &.r28497 {
     .vm--modal {
       .content {
         .left__wrapper {

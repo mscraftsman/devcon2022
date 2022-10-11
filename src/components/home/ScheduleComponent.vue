@@ -261,8 +261,8 @@
             :class="[
               'author__information',
               {
-                multiple: modal_info.speakers && modal_info.speakers.length > 1,
-              },
+                multiple: modal_info.speakers && modal_info.speakers.length > 1
+              }
             ]"
           >
             <div
@@ -385,7 +385,7 @@ export default {
         "14:00",
         "15:00",
         "16:00",
-        "17:00",
+        "17:00"
       ],
       MINUTES_TO_EIGHT_OCLOCK: 9 * 60,
       timeStart: 0,
@@ -396,23 +396,23 @@ export default {
         r12900: "Batcave",
         r12901: "Avengers Tower",
         r12902: "New Asgard",
-        r12903: "Kryptone",
+        r12903: "Kryptone"
       },
       roomUrls: {
         r12900: "https://youtu.be/L2f2fb2ZBoE",
         r12901: "https://youtu.be/m4H9MakPvus",
         r12902: "https://youtu.be/wiVlUzLaiJg",
-        r12903: "https://youtu.be/boHc0HfLWSc",
+        r12903: "https://youtu.be/boHc0HfLWSc"
       },
       availableRooms: [
         { id: "r12900", index: 0 },
         { id: "r12901", index: 1 },
         { id: "r12902", index: 2 },
-        { id: "r12903", index: 3 },
+        { id: "r12903", index: 3 }
       ],
       currentDay: 0,
       currentRoom: { id: "r12900", index: 0 },
-      modal_info: {},
+      modal_info: {}
     };
   },
   methods: {
@@ -453,7 +453,7 @@ export default {
 
       return {
         top: offsetResult * (this.timeScale * 0.6) + "px",
-        height: duration * (this.timeScale * 0.6) + "px",
+        height: duration * (this.timeScale * 0.6) + "px"
       };
     },
     // Takes a programme object
@@ -489,7 +489,7 @@ export default {
       let duration = endCoordinate - startCoordinate;
       return {
         top: startCoordinate * (this.timeScale * 0.6) + "px",
-        height: duration * (this.timeScale * 0.73) + "px",
+        height: duration * (this.timeScale * 0.73) + "px"
       };
     },
     next() {
@@ -499,7 +499,7 @@ export default {
       this.changeRoom(false);
     },
     changeRoom(next) {
-      const currentIndex = this.availableRooms.findIndex((room) => {
+      const currentIndex = this.availableRooms.findIndex(room => {
         return room.id === this.currentRoom.id;
       });
       const prev = !next;
@@ -524,7 +524,7 @@ export default {
         this.currentRoom = this.availableRooms[prevIndex];
         return;
       }
-    },
+    }
   },
   computed: {
     timeEnd() {
@@ -534,7 +534,7 @@ export default {
       sessions: "getSessions",
       speakers: "getSpeakers",
       speakersById: "getSpeakersById",
-      sessionsById: "getSessionsById",
+      sessionsById: "getSessionsById"
     }),
     currentDaySessions() {
       let result = null;
@@ -551,13 +551,13 @@ export default {
         return {
           columns: ["50px", "1fr"],
           rows: ["1fr"],
-          areas: [["Time", this.currentRoom.id]],
+          areas: [["Time", this.currentRoom.id]]
         };
       }
       return {
         columns: ["50px", "1fr", "1fr", "1fr", "1fr"],
         rows: ["1fr"],
-        areas: [["Time", "r12900", "r12901", "r12902", "r12903"]],
+        areas: [["Time", "r12900", "r12901", "r12902", "r12903"]]
       };
     },
     displayedRooms() {
@@ -572,7 +572,7 @@ export default {
         return [];
       }
       if (this.isMobile) {
-        return this.currentDaySessions.filter((session) => {
+        return this.currentDaySessions.filter(session => {
           // * Keep coercion (`==` instead of `===`) here. Please.
           // * Processing `this.currentRoom` directly here to trigger reactivity.
           // * The update is not triggered when declared in a variable.
@@ -580,7 +580,7 @@ export default {
         });
       }
       return this.currentDaySessions;
-    },
+    }
   },
   mounted() {
     // this.fetchSessions();
@@ -588,7 +588,7 @@ export default {
   components: {
     CssGrid,
     CssGridItem,
-    ViewportListener,
+    ViewportListener
   },
   async created() {
     const stats = this.$store.dispatch("FETCH_STATS");
@@ -607,7 +607,7 @@ export default {
       return;
     }
     Promise.allSettled(promises);
-  },
+  }
 };
 </script>
 

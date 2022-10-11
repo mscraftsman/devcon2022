@@ -18,7 +18,7 @@ const routes = [
   {
     path: "/agenda/:id",
     name: "AgendaSingle",
-    component: () => import("../views/Agenda.vue")
+    component: () => import("../views/AgendaSingle.vue")
   },
   {
     path: "/speakers",
