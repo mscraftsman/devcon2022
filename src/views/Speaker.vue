@@ -5,7 +5,7 @@
         <ul>
           <li>
             <router-link :to="{ name: 'Speakers' }" class="speaker--anchor">
-              Back to Speakers
+              Speakers
             </router-link>
           </li>
           <li>/</li>
@@ -80,14 +80,14 @@ export default {
     return {
       speaker_id: null,
       page: {
-        title: "MSCC"
+        title: "MSCC",
       },
-      speaker: null
+      speaker: null,
     };
   },
   metaInfo() {
     return {
-      title: this.page.title
+      title: this.page.title,
     };
   },
   methods: {
@@ -96,7 +96,7 @@ export default {
       if (this.speakers.length === 0) {
         this.FETCH_SPEAKERS();
       }
-      let theSpeaker = this.speakers.find(speaker => speaker.id === id);
+      let theSpeaker = this.speakers.find((speaker) => speaker.id === id);
       return theSpeaker;
     },
     processSpeaker(id) {
@@ -120,13 +120,13 @@ export default {
     },
     shortenify(text) {
       return text.length > 11 ? text.substring(0, 11) + ".." : text;
-    }
+    },
   },
   computed: {
     ...mapGetters({
       sessions: "getSessions",
-      speakers: "getSpeakers"
-    })
+      speakers: "getSpeakers",
+    }),
   },
   mounted() {
     this.speaker_id = this.$route.params.id;
@@ -138,13 +138,13 @@ export default {
       sessions = this.FETCH_SESSIONS();
       speakers = this.FETCH_SPEAKERS();
 
-      speakers.then(results => {
+      speakers.then((results) => {
         this.processSpeaker(this.speaker_id);
       });
     } else {
       this.processSpeaker(this.speaker_id);
     }
-  }
+  },
 };
 </script>
 

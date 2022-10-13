@@ -229,7 +229,7 @@
                   >
                     <img src="/funding/spoon.png" alt="Spoon Consulting" />
                   </a>
-                  <p>between 17hr30 to 19hr30</p>
+                  <p>From 17hr30 to 19hr30</p>
                 </div>
                 <div class="message" v-if="currentDay == 1">
                   <p>Happy Hour sponsored by</p>
@@ -240,7 +240,7 @@
                   >
                     <img src="/funding/corel.png" alt="Corel" />
                   </a>
-                  <p>between 17hr30 to 19hr30</p>
+                  <p>From 17hr30 to 19hr30</p>
                 </div>
               </div>
             </div>
@@ -434,6 +434,7 @@ export default {
         "16:00",
         "16:30",
         "17:00",
+        "17:30",
       ],
       MINUTES_TO_EIGHT_OCLOCK: 8 * 60,
       timeStart: 0,
@@ -523,7 +524,7 @@ export default {
       } else if (
         (programme.startsAt == "2022-11-22T10:00:00" &&
           programme.roomId == "22486") ||
-        (programme.startsAt == "2022-11-24T15:30:00" &&
+        (programme.startsAt == "2022-11-24T16:00:00" &&
           programme.roomId == "22486")
       ) {
         return "opening";
@@ -550,7 +551,7 @@ export default {
       let duration = endCoordinate - startCoordinate;
       return {
         top: startCoordinate * (this.timeScale * 0.6) + "px",
-        height: duration * (this.timeScale * 0.73) + "px",
+        height: duration * (this.timeScale * 0.72) + "px",
       };
     },
     next() {
@@ -851,7 +852,7 @@ export default {
 
   .programme-track {
     // background: green;
-    height: 1700px;
+    height: 1800px;
     /*overflow-y: scroll;*/
     .programme-track-container {
       /*scroll-snap-type: y proximity;*/
