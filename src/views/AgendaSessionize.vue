@@ -549,9 +549,24 @@ export default {
         (new Date(programme.endsAt + ".000Z").getHours() + offset) * 60;
       let endCoordinate = endHours + endMinutes - this.MINUTES_TO_EIGHT_OCLOCK;
       let duration = endCoordinate - startCoordinate;
+
+      console.log(programme.title);
+      let coordinateCheck = endCoordinate - startCoordinate;
+      console.log(coordinateCheck);
+
+      let height_ratio = 0.72;
+
+      if (coordinateCheck > 45) {
+        height_ratio = 0.65;
+      }
+
+      if (coordinateCheck > 200) {
+        height_ratio = 0.59;
+      }
+
       return {
         top: startCoordinate * (this.timeScale * 0.6) + "px",
-        height: duration * (this.timeScale * 0.72) + "px",
+        height: duration * (this.timeScale * height_ratio) + "px",
       };
     },
     next() {
@@ -1079,7 +1094,7 @@ export default {
 
   &[room-id="22486"] {
     .session__block {
-      background: url("/red_bg.png");
+      background: url("/red_bg.svg");
       background-position: center center;
       background-size: cover;
 
@@ -1104,7 +1119,7 @@ export default {
   }
   &[room-id="22487"] {
     .session__block {
-      background: url("/blue_bg.png");
+      background: url("/blue_bg.svg");
       background-position: center center;
       background-size: cover;
 
@@ -1129,7 +1144,7 @@ export default {
   }
   &[room-id="22488"] {
     .session__block {
-      background: url("/yellow_bg.png");
+      background: url("/yellow_bg.svg");
       background-position: center center;
       background-size: cover;
 
@@ -1156,7 +1171,7 @@ export default {
   }
   &[room-id="28497"] {
     .session__block {
-      background: url("/green_bg.png");
+      background: url("/green_bg.svg");
       background-position: center center;
       background-size: cover;
 
