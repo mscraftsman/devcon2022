@@ -20,12 +20,12 @@ import FooterComponent from "@/components/shared/FooterComponent.vue";
 export default {
   metaInfo: {
     title: "Home",
-    titleTemplate: "%s - Developers Conference 2022 | MSCC"
+    titleTemplate: "%s - Developers Conference 2022 | MSCC",
   },
   components: {
     HeaderComponent,
-    FooterComponent
-  }
+    FooterComponent,
+  },
 };
 </script>
 
@@ -57,6 +57,14 @@ html {
   font-family: var(--font-poppins);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 
 *,

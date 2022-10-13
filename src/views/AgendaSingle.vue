@@ -57,7 +57,10 @@
                   <div class="name">{{ speaker.name }}</div>
                   <div
                     class="profession"
-                    v-if="speakersById[speaker.id].tagLine"
+                    v-if="
+                      speakersById[speaker.id] &&
+                        speakersById[speaker.id].tagLine
+                    "
                   >
                     {{ speakersById[speaker.id].tagLine }}
                   </div>
@@ -599,6 +602,25 @@ export default {
             width: 100%;
             max-width: 100%;
             margin: 0;
+          }
+        }
+        .description {
+          p {
+            max-width: 300px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 375px) {
+    .speaker__container {
+      .session__wrapper {
+        .content {
+          .description {
+            p {
+              max-width: 270px;
+            }
           }
         }
       }

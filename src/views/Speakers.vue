@@ -53,7 +53,7 @@ import { time as timeHelper, getDay as getDayHelper } from "@/helpers";
 
 export default {
   metaInfo: {
-    title: "Speakers"
+    title: "Speakers",
   },
   methods: {
     ...mapActions(["FETCH_SESSIONS", "FETCH_SPEAKERS"]),
@@ -61,37 +61,29 @@ export default {
       if (this.speakers.length === 0) {
         this.FETCH_SPEAKERS();
       }
-      let theSpeaker = this.speakers.find(speaker => speaker.id === id);
+      let theSpeaker = this.speakers.find((speaker) => speaker.id === id);
       return theSpeaker.profilePicture;
     },
     time: timeHelper,
-    getDay: getDayHelper
+    getDay: getDayHelper,
   },
   computed: {
     ...mapGetters({
       sessions: "getSessions",
-      speakers: "getSpeakers"
-    })
+      speakers: "getSpeakers",
+    }),
   },
   mounted: function() {
     this.FETCH_SESSIONS();
     this.FETCH_SPEAKERS();
   },
   components: {
-    SpeakerBox
-  }
+    SpeakerBox,
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
-}
-
 .speakers__container {
   padding: 60px 0 200px;
 }

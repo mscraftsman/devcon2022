@@ -140,8 +140,6 @@ export default new Vuex.Store({
         );
       }
 
-      console.log(payload)
-
       commit(SET_SPEAKERS, payload);
 
       let groupById = (payload || []).reduce(function(r, a) {

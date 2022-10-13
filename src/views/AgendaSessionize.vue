@@ -10,395 +10,208 @@
               Agenda
             </h2>
           </div>
-          <!-- <img class="schedule-wf" src="/schedule.jpg" alt /> -->
-          <div class="schedule__parent__container">
-            <div class="date--container">
-              <div class="date">22 November</div>
-              <div class="date">23 November</div>
-              <div class="date">24 November</div>
+          <transition name="fade" mode="out-in">
+            <div
+              class="schedule__parent__container"
+              v-if="!sessions.length"
+              key="loader"
+            >
+              <div class="loader">LOADING</div>
             </div>
-            <div class="schedule-container">
-              <div class="date-track">
-                <div
-                  class="day-item"
-                  :class="{ active: currentDay == 0 }"
-                  @click="currentDay = 0"
-                >
-                  Day 1
-                </div>
-                <div
-                  class="day-item"
-                  :class="{ active: currentDay == 1 }"
-                  @click="currentDay = 1"
-                >
-                  Day 2
-                </div>
-                <div
-                  class="day-item"
-                  :class="{ active: currentDay == 2 }"
-                  @click="currentDay = 2"
-                >
-                  Day 3
-                </div>
+            <div class="schedule__parent__container" key="sessions" v-else>
+              <div class="date--container">
+                <div class="date">22 November</div>
+                <div class="date">23 November</div>
+                <div class="date">24 November</div>
               </div>
-
-              <div class="room-track">
-                <button title="prev" v-if="isMobile" @click="prev">&lt;</button>
-                <css-grid
-                  class="room-name"
-                  :columns="currentGrid.columns"
-                  :rows="currentGrid.rows"
-                  :areas="currentGrid.areas"
-                >
-                  <css-grid-item
-                    :area="room"
-                    class="room-item uppercase text-sm"
-                    :data-room="index"
-                    v-for="(room, index) in displayedRooms"
-                    :key="index"
-                    >{{ roomRepo[room] }}
-                  </css-grid-item>
-                </css-grid>
-                <button title="next" v-if="isMobile" @click="next">&gt;</button>
-              </div>
-
-              <div class="programme-track">
-                <css-grid
-                  :columns="currentGrid.columns"
-                  :rows="currentGrid.rows"
-                  :areas="currentGrid.areas"
-                  class="programme-track-container"
-                  :gap="isMobile ? '4px' : '12px'"
-                >
-                  <!-- Time -->
-                  <css-grid-item
-                    area="Time"
-                    class="time-item"
-                    v-for="(time, index) in times.slice(timeStart, timeEnd)"
-                    :style="timeStartCoordinate(time)"
-                    :key="time.startsAt + '-' + index"
+              <div class="schedule-container">
+                <div class="date-track">
+                  <div
+                    class="day-item"
+                    :class="{ active: currentDay == 0 }"
+                    @click="currentDay = 0"
                   >
-                    <div class="time--slot">{{ time }}</div>
-                  </css-grid-item>
-
-                  <!-- Programmes -->
-                  <css-grid-item
-                    :area="'r' + programme.roomId"
-                    class="programme-item box"
-                    v-for="(programme, index) in displayedSessions"
-                    :style="programmeStartCoordinate(programme)"
-                    :data-index="index"
-                    :room-id="getRoomId(programme)"
-                    :key="index"
-                    :data-element="isKeynote(programme)"
+                    Day 1
+                  </div>
+                  <div
+                    class="day-item"
+                    :class="{ active: currentDay == 1 }"
+                    @click="currentDay = 1"
                   >
-                    <router-link
-                      class="session__block"
-                      :to="{
-                        name: 'AgendaSingle',
-                        params: { id: programme.id },
-                      }"
+                    Day 2
+                  </div>
+                  <div
+                    class="day-item"
+                    :class="{ active: currentDay == 2 }"
+                    @click="currentDay = 2"
+                  >
+                    Day 3
+                  </div>
+                </div>
+
+                <div class="room-track">
+                  <button title="prev" v-if="isMobile" @click="prev">
+                    &lt;
+                  </button>
+                  <css-grid
+                    class="room-name"
+                    :columns="currentGrid.columns"
+                    :rows="currentGrid.rows"
+                    :areas="currentGrid.areas"
+                  >
+                    <css-grid-item
+                      :area="room"
+                      class="room-item uppercase text-sm"
+                      :data-room="index"
+                      v-for="(room, index) in displayedRooms"
+                      :key="index"
+                      >{{ roomRepo[room] }}
+                    </css-grid-item>
+                  </css-grid>
+                  <button title="next" v-if="isMobile" @click="next">
+                    &gt;
+                  </button>
+                </div>
+
+                <div class="programme-track">
+                  <css-grid
+                    :columns="currentGrid.columns"
+                    :rows="currentGrid.rows"
+                    :areas="currentGrid.areas"
+                    class="programme-track-container"
+                    :gap="isMobile ? '4px' : '12px'"
+                  >
+                    <!-- Time -->
+                    <css-grid-item
+                      area="Time"
+                      class="time-item"
+                      v-for="(time, index) in times.slice(timeStart, timeEnd)"
+                      :style="timeStartCoordinate(time)"
+                      :key="time.startsAt + '-' + index"
                     >
-                      <div class="title">
-                        {{ checkLength(programme.title) }}
-                      </div>
+                      <div class="time--slot">{{ time }}</div>
+                    </css-grid-item>
 
-                      <div
-                        v-if="programme.speakers.length > 0"
-                        class="speaker__info"
+                    <!-- Programmes -->
+                    <css-grid-item
+                      :area="'r' + programme.roomId"
+                      class="programme-item box"
+                      v-for="(programme, index) in displayedSessions"
+                      :style="programmeStartCoordinate(programme)"
+                      :data-index="index"
+                      :room-id="getRoomId(programme)"
+                      :key="index"
+                      :data-element="isKeynote(programme)"
+                    >
+                      <router-link
+                        :class="[
+                          'session__block',
+                          { disabled: programme.isServiceSession },
+                        ]"
+                        :to="{
+                          name: 'AgendaSingle',
+                          params: { id: programme.id },
+                        }"
                       >
-                        <template
-                          v-if="
-                            programme.speakers && programme.speakers.length == 1
-                          "
+                        <div class="title">
+                          {{ checkLength(programme.title) }}
+                        </div>
+
+                        <div
+                          v-if="programme.speakers.length > 0"
+                          class="speaker__info"
                         >
-                          <div
-                            v-for="(speaker, index) in programme.speakers"
-                            :key="index"
-                            class="speaker"
+                          <template
+                            v-if="
+                              programme.speakers &&
+                                programme.speakers.length == 1
+                            "
                           >
                             <div
-                              class="image"
-                              v-if="speakersById[speaker.id].profilePicture"
+                              v-for="(speaker, index) in programme.speakers"
+                              :key="index"
+                              class="speaker"
                             >
-                              <img
-                                :src="speakersById[speaker.id].profilePicture"
-                                :alt="speaker.name"
-                              />
+                              <div
+                                class="image"
+                                v-if="speakersById[speaker.id].profilePicture"
+                              >
+                                <img
+                                  :src="speakersById[speaker.id].profilePicture"
+                                  :alt="speaker.name"
+                                />
+                              </div>
+                              <div class="info">
+                                {{ checkNameLength(speaker.name) }}
+                              </div>
                             </div>
-                            <div class="info">
-                              {{ checkNameLength(speaker.name) }}
-                            </div>
-                          </div>
-                        </template>
-                        <template
-                          v-if="
-                            programme.speakers && programme.speakers.length > 1
-                          "
-                        >
-                          <div
-                            v-for="(speaker, index) in programme.speakers"
-                            :key="index"
-                            class="speaker multiple"
+                          </template>
+                          <template
+                            v-if="
+                              programme.speakers &&
+                                programme.speakers.length > 1
+                            "
                           >
                             <div
-                              class="image"
-                              v-if="speakersById[speaker.id].profilePicture"
+                              v-for="(speaker, index) in programme.speakers"
+                              :key="index"
+                              class="speaker multiple"
                             >
-                              <img
-                                :src="speakersById[speaker.id].profilePicture"
-                                :alt="speaker.name"
-                                v-tooltip.top-center="speaker.name"
-                              />
-                              <!-- <div class="pop">
+                              <div
+                                class="image"
+                                v-if="speakersById[speaker.id].profilePicture"
+                              >
+                                <img
+                                  :src="speakersById[speaker.id].profilePicture"
+                                  :alt="speaker.name"
+                                  v-tooltip.top-center="speaker.name"
+                                />
+                                <!-- <div class="pop">
                               {{ speaker.name }}
                             </div>-->
+                              </div>
                             </div>
-                          </div>
-                        </template>
-                      </div>
-                    </router-link>
-                    <!-- <router-link
-                    :to="{ name: 'session', params: { id: programme.id } }"
-                    class="session__block"
-                  >
-                  </router-link>-->
-                  </css-grid-item>
-                </css-grid>
-              </div>
-
-              <!-- <div class="room-track">
-                <button title="prev" v-if="isMobile" @click="prev">&lt;</button>
-                <css-grid
-                  class="room-name"
-                  :columns="currentGrid.columns"
-                  :rows="currentGrid.rows"
-                  :areas="currentGrid.areas"
-                >
-                  <css-grid-item
-                    :area="room"
-                    class="room-item"
-                    :data-room="index"
-                    v-for="(room, index) in displayedRooms"
-                    :key="index"
-                    ><a
-                      :href="roomUrls[room]"
-                      class="room-item"
-                      :data-room="index"
-                      alt="Youtube live stream"
+                          </template>
+                        </div>
+                      </router-link>
+                    </css-grid-item>
+                  </css-grid>
+                </div>
+                <div class="sponsor__message">
+                  <div class="message" v-if="currentDay == 0">
+                    <p>Happy Hour sponsored by</p>
+                    <a
+                      href="https://www.spoonconsulting.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      >{{ roomRepo[room] }}</a
                     >
-                  </css-grid-item>
-                </css-grid>
-                <button title="next" v-if="isMobile" @click="next">&gt;</button>
-              </div>
-
-              <div class="date-track">
-                <div
-                  class="day-item"
-                  :class="{ active: currentDay == 0 }"
-                  @click="currentDay = 0"
-                >
-                  Day 1
-                </div>
-                <div
-                  class="day-item"
-                  :class="{ active: currentDay == 1 }"
-                  @click="currentDay = 1"
-                >
-                  Day 2
-                </div>
-                <div
-                  class="day-item"
-                  :class="{ active: currentDay == 2 }"
-                  @click="currentDay = 2"
-                >
-                  Day 3
-                </div>
-              </div> -->
-
-              <div class="sponsor__message">
-                <div class="message" v-if="currentDay == 0">
-                  <p>Happy Hour sponsored by</p>
-                  <a
-                    href="https://www.spoonconsulting.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img src="/funding/spoon.png" alt="Spoon Consulting" />
-                  </a>
-                  <p>From 17hr30 to 19hr30</p>
-                </div>
-                <div class="message" v-if="currentDay == 1">
-                  <p>Happy Hour sponsored by</p>
-                  <a
-                    href="https://www.corel.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img src="/funding/corel.png" alt="Corel" />
-                  </a>
-                  <p>From 17hr30 to 19hr30</p>
-                </div>
-              </div>
-            </div>
-            <ViewportListener v-model="viewport" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <modal
-      name="session_modal"
-      :class="['session_modal', 'r' + modal_info.theme]"
-      :width="1100"
-      height="auto"
-      :adaptive="true"
-      :clickToClose="false"
-      :scrollable="true"
-    >
-      <div class="close__button">
-        <button @click="closeModal()">
-          <img src="/close.svg" alt="close" />
-        </button>
-      </div>
-      <div class="content">
-        <div class="left__wrapper">
-          <h3>{{ modal_info.title }}</h3>
-          <div class="location__time">
-            <div class="location">
-              <span class="icon">
-                <img src="/location.svg" alt="Location" />
-              </span>
-              <span class="data">{{ modal_info.room }}</span>
-            </div>
-            <div class="time">
-              <span class="icon">
-                <img src="/time.svg" alt="Time" />
-              </span>
-              <span class="data">
-                {{ getDay(modal_info.startsAt) }}
-                {{ time(modal_info.startsAt) }} -
-                {{ time(modal_info.endsAt) }}
-              </span>
-            </div>
-          </div>
-          <div class="description">
-            <p v-html="modal_info.description"></p>
-          </div>
-        </div>
-        <div class="right__wrapper">
-          <div
-            :class="[
-              'author__information',
-              {
-                multiple: modal_info.speakers && modal_info.speakers.length > 1,
-              },
-            ]"
-          >
-            <div
-              class="speaker"
-              v-for="(speaker, index) in modal_info.speakers"
-              :key="index"
-            >
-              <div class="profile__name">
-                <div
-                  class="image"
-                  v-if="
-                    speakersById[speaker.id] &&
-                      speakersById[speaker.id].profilePicture
-                  "
-                >
-                  <img
-                    :src="speakersById[speaker.id].profilePicture"
-                    :alt="speaker.name"
-                  />
-                </div>
-                <div class="info">
-                  <div class="name">{{ speaker.name }}</div>
-                  <div
-                    class="profession"
-                    v-if="speakersById[speaker.id].tagLine"
-                  >
-                    {{ speakersById[speaker.id].tagLine }}
+                      <img src="/funding/spoon.png" alt="Spoon Consulting" />
+                    </a>
+                    <p>From 17hr30 to 19hr30</p>
+                  </div>
+                  <div class="message" v-if="currentDay == 1">
+                    <p>Happy Hour sponsored by</p>
+                    <a
+                      href="https://www.alludo.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src="/funding/alludo.png"
+                        class="alludo"
+                        alt="Alludo"
+                      />
+                    </a>
+                    <p>From 17hr30 to 19hr30</p>
                   </div>
                 </div>
               </div>
-              <div class="bio">
-                <p v-html="speakersById[speaker.id].bio"></p>
-              </div>
-              <div class="social">
-                <template
-                  v-for="(social, index) in speakersById[speaker.id].links"
-                >
-                  <a
-                    :href="social.url"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="social__icon"
-                    :key="'twitter-' + index"
-                    v-if="social.title == 'Twitter'"
-                  >
-                    <img src="/icon/twitter.svg" alt="Twitter" />
-                  </a>
-                  <a
-                    :href="social.url"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="social__icon"
-                    :key="'twitter-' + index"
-                    v-if="social.title == 'Facebook'"
-                  >
-                    <img src="/icon/facebook.svg" alt="Facebook" />
-                  </a>
-                  <a
-                    :href="social.url"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="social__icon"
-                    :key="'twitter-' + index"
-                    v-if="social.title == 'LinkedIn'"
-                  >
-                    <img src="/icon/linkedin.svg" alt="LinkedIn" />
-                  </a>
-                  <a
-                    :href="social.url"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="social__icon"
-                    :key="'twitter-' + index"
-                    v-if="social.title == 'Instagram'"
-                  >
-                    <img src="/icon/instagram.svg" alt="Instagram" />
-                  </a>
-                  <a
-                    :href="social.url"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="social__icon"
-                    :key="'twitter-' + index"
-                    v-if="social.title == 'GitHub'"
-                  >
-                    <img src="/icon/github.svg" alt="Github" />
-                  </a>
-                  <a
-                    :href="social.url"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="social__icon"
-                    :key="'twitter-' + index"
-                    v-if="social.title == 'Blog'"
-                  >
-                    <img src="/icon/website.svg" alt="Website" />
-                  </a>
-                </template>
-              </div>
+              <ViewportListener v-model="viewport" />
             </div>
-          </div>
+          </transition>
         </div>
       </div>
-    </modal>
+    </div>
   </div>
 </template>
 
@@ -550,9 +363,7 @@ export default {
       let endCoordinate = endHours + endMinutes - this.MINUTES_TO_EIGHT_OCLOCK;
       let duration = endCoordinate - startCoordinate;
 
-      console.log(programme.title);
       let coordinateCheck = endCoordinate - startCoordinate;
-      console.log(coordinateCheck);
 
       let height_ratio = 0.72;
 
@@ -689,6 +500,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.schedule__parent__container {
+  .loader {
+    text-align: center;
+    font-size: 25px;
+  }
+}
 .sponsor__message {
   .message {
     font-family: var(--font-bangers);
@@ -704,6 +521,11 @@ export default {
     a {
       img {
         max-height: 120px;
+
+        &.alludo {
+          max-height: 60px;
+          margin: 20px 0;
+        }
       }
     }
   }
@@ -998,6 +820,12 @@ export default {
     position: relative;
     height: 100%;
     width: 100%;
+
+    &.disabled {
+      // opacity: 0.5;
+      pointer-events: none;
+      cursor: default;
+    }
 
     .title {
       padding: 15px 18px;

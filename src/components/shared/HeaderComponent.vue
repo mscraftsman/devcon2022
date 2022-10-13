@@ -61,9 +61,11 @@
             :key="index"
             class="desktop--only"
           >
-            <router-link :to="{ name: item.name_path }">{{
-              item.text
-            }}</router-link>
+            <router-link
+              :to="{ name: item.name_path }"
+              @click.native="closeMenu()"
+              >{{ item.text }}</router-link
+            >
           </li>
         </ul>
       </div>
