@@ -375,7 +375,7 @@
                   <img src="/funding/spoon.png" alt="Spoon Consulting" />
                 </a>
               </div>
-              <div class="item">
+              <div class="item logo--alludo">
                 <a
                   href="https://www.alludo.com/"
                   target="_blank"
@@ -703,6 +703,12 @@ export default {};
         &.logo--lasentinelle {
           img {
             width: 90%;
+          }
+        }
+
+        &.logo--alludo {
+          img {
+            width: 80%;
           }
         }
 

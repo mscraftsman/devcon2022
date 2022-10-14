@@ -61,9 +61,11 @@
             :key="index"
             class="desktop--only"
           >
-            <router-link :to="{ name: item.name_path }">{{
-              item.text
-            }}</router-link>
+            <router-link
+              :to="{ name: item.name_path }"
+              @click.native="closeMenu()"
+              >{{ item.text }}</router-link
+            >
           </li>
         </ul>
       </div>
@@ -77,6 +79,14 @@ export default {
     return {
       menu: false,
       menu_items: [
+        {
+          name_path: "Agenda",
+          text: "Agenda",
+        },
+        {
+          name_path: "Speakers",
+          text: "Speakers",
+        },
         {
           name_path: "Community",
           text: "Community",
@@ -228,6 +238,7 @@ export default {
           font-size: 22px;
           transition: all 0.2s ease-in-out;
 
+          &.router-link-active,
           &:hover {
             color: var(--bronze);
             font-size: 24px;
@@ -286,7 +297,7 @@ export default {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .mobile__menu--wrapper {
     display: block;
   }

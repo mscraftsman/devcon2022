@@ -16,6 +16,21 @@ const routes = [
     component: () => import("../views/Agenda.vue")
   },
   {
+    path: "/agenda/:id",
+    name: "AgendaSingle",
+    component: () => import("../views/AgendaSingle.vue")
+  },
+  {
+    path: "/speakers",
+    name: "Speakers",
+    component: () => import("../views/Speakers.vue")
+  },
+  {
+    path: "/speaker/:id",
+    name: "Speaker",
+    component: () => import("../views/Speaker.vue")
+  },
+  {
     path: "/community",
     name: "Community",
     component: () => import("../views/Community.vue")

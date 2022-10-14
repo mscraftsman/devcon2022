@@ -2,7 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-import VueMeta from 'vue-meta'
+import VueMeta from "vue-meta";
 
 import VModal from "vue-js-modal";
 Vue.use(VModal);
@@ -10,7 +10,7 @@ Vue.use(VModal);
 import VTooltip from "v-tooltip";
 Vue.use(VTooltip);
 
-Vue.use(VueMeta)
+Vue.use(VueMeta);
 
 // import "./assets/tailwind.css";
 

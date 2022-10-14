@@ -61,7 +61,7 @@ import CommunityBlockUbuntuMU from "@/components/communities/CommunityBlockUbunt
 
 export default {
   metaInfo: {
-    title: "Community",
+    title: "Community"
   },
   components: {
     CommunityBlockGDG,
@@ -72,9 +72,9 @@ export default {
     CommunityBlockOpenSUSEMU,
     CommunityBlockOracleClub,
     CommunityBlockPYMUG,
-    CommunityBlockUbuntuMU,
+    CommunityBlockUbuntuMU
   },
-  mounted() {},
+  mounted() {}
 };
 </script>
 

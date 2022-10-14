@@ -592,11 +592,11 @@ export default {
   },
   async created() {
     const stats = this.$store.dispatch("FETCH_STATS");
-    const sponsors = this.$store.dispatch("FETCH_SPONSORS");
+    // const sponsors = this.$store.dispatch("FETCH_SPONSORS");
     const speakers = this.$store.dispatch("FETCH_SPEAKERS");
     const sessions = this.$store.dispatch("FETCH_SESSIONS");
     const credits = this.$store.dispatch("FETCH_CREDITS");
-    const promises = [stats, sponsors, speakers, sessions, credits];
+    const promises = [stats, speakers, sessions, credits];
     if (!Promise.allSettled) {
       try {
         await Promise.all(promises);

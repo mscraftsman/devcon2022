@@ -4,7 +4,9 @@
     <HeaderComponent />
     <div class="main__view">
       <main id="main">
-        <router-view />
+        <transition name="fade">
+          <router-view />
+        </transition>
       </main>
     </div>
     <FooterComponent />
@@ -32,6 +34,8 @@ export default {
 
 html {
   --dark: #333;
+  --black: black;
+  --white: #fff;
   --background: #f0f0f0;
   --diamond: #bf8bbc;
   --titanium: #4daee2;
@@ -53,6 +57,14 @@ html {
   font-family: var(--font-poppins);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 
 *,
@@ -110,6 +122,16 @@ html {
 
 .skip-link:focus {
   top: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 
 @media (max-width: 768px) {

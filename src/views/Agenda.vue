@@ -1,13 +1,19 @@
 <template>
-  <div class="container__fw page">
-    <h1>Agenda</h1>
-    <div class="content">
-      <p>
-        The conference agenda will be published soon.
-      </p>
-    </div>
-  </div>
+  <AgendaSessionize />
 </template>
+
+<script>
+import AgendaSessionize from "@/views/AgendaSessionize";
+
+export default {
+  metaInfo: {
+    title: "Agenda"
+  },
+  components: {
+    AgendaSessionize
+  }
+};
+</script>
 
 <style lang="scss" scoped>
 .page {

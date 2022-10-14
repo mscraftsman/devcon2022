@@ -38,7 +38,7 @@
           Baichoo, Emmy Ng Tat Mew, Pajanilingum Renghen, Vidush Namah, Aditya
           Bholah, Chitesh Sham, Kushul Soomaree, Chervine Bhiwoo, Girish
           Mahabir, Chanakya Tiger Jheengut (Pritvi), Vanessa V. Chellen, Ish
-          Sookun, Nirvan (Tejas) Pagooah.
+          Sookun, Nirvan Pagooah.
         </p>
       </div>
     </div>
@@ -53,8 +53,8 @@ export default {
     },
     closeModal() {
       this.$modal.hide("credits__modal");
-    }
-  }
+    },
+  },
 };
 </script>
 
