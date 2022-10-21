@@ -150,7 +150,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="/funding/synthesis.png" alt="Synthesis" />
+                  <img src="/funding/synthesis-aws.png" alt="Synthesis - AWS Partner" />
                 </a>
               </div>
             </div>
