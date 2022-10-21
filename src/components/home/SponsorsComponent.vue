@@ -119,11 +119,11 @@
               </div>
               <div class="item">
                 <a
-                  href="https://www.synthesis.co.za"
+                  href="https://www.objectivity.co.uk/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="/funding/synthesis.png" alt="Synthesis" />
+                  <img src="/funding/objectivity.png" alt="Objectivity" />
                 </a>
               </div>
               <div class="item">
@@ -144,13 +144,13 @@
                   <img src="/funding/klanik.png" alt="Klanik" />
                 </a>
               </div>
-              <div class="item logo--objectivity">
+              <div class="item item--synthesis">
                 <a
-                  href="https://www.objectivity.co.uk/"
+                  href="https://www.synthesis.co.za"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="/funding/objectivity.png" alt="Objectivity" />
+                  <img src="/funding/synthesis.png" alt="Synthesis" />
                 </a>
               </div>
             </div>
