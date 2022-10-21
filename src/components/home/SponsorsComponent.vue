@@ -150,7 +150,10 @@
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="/funding/synthesis-aws.png" alt="Synthesis - AWS Partner" />
+                  <img
+                    src="/funding/synthesis-aws.png"
+                    alt="Synthesis - AWS Partner"
+                  />
                 </a>
               </div>
             </div>
@@ -752,6 +755,15 @@ export default {};
           }
         }
 
+        &.item--synthesis {
+          width: 100%;
+          max-width: 450px;
+
+          img {
+            width: 100%;
+          }
+        }
+
         &.logo--astek {
           img {
             // max-height: 100px;
@@ -830,12 +842,24 @@ export default {};
           margin: 0 20px;
         }
       }
-      .funding {
-        .item {
-          width: 25%;
 
-          img {
-            width: 100%;
+      &.reality {
+        .funding {
+          .item {
+            width: 25%;
+
+            img {
+              width: 100%;
+            }
+
+            &.item--synthesis {
+              width: 100%;
+              max-width: 400px;
+
+              img {
+                width: 100%;
+              }
+            }
           }
         }
       }
@@ -967,6 +991,15 @@ export default {};
             img {
               height: 50px;
               width: auto;
+            }
+          }
+
+          &.item--synthesis {
+            width: 100%;
+            max-width: 270px !important;
+
+            img {
+              width: 100%;
             }
           }
         }

@@ -90,8 +90,8 @@
 <script>
 export default {
   metaInfo: {
-    title: "Code of Conduct"
-  }
+    title: "Code of Conduct",
+  },
 };
 </script>
 
