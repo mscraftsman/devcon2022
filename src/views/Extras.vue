@@ -51,7 +51,7 @@
             </h2>
             <div class="extras__info">
               <p>
-                Hi, my name is Sabrina a.k.a Kyky (entrepreneur) 29 years old,
+                Hi, my name is Sabrina a.k.a Kyky (entrepreneur) 30 years old,
                 art passionate and owner of Kyky Otaku.
               </p>
 
@@ -72,7 +72,7 @@
               <p>
                 I create plush of all sorts, mainly human puppet (portrait doll)
                 but also illustrations, custom cards, dreamcatchers and now
-                macrame.
+                cosplays.
               </p>
 
               <p>
