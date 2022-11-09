@@ -23,7 +23,5 @@ Use your best judgment, and feel free to propose changes to this document in a p
 You can reach the maintainers on [Twitter](https://twitter.com/MSCraftsman) or [MSCC Slack](https://msccmu.slack.com/) !
 
 - Nirvan Pagooah: 🐦 [@nirvanpagooah](https://twitter.com/nirvanpagooah)
-
 - Jochen Kirstaetter: 🐦 [@JKirstaetter](https://twitter.com/JKirstaetter)
 
-- Marine Ng Tat Mew: 🐦 [@JadeMarineNg](https://twitter.com/JadeMarineNg)
