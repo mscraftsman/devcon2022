@@ -25,7 +25,7 @@ We don't have a design ! Just a theme. The discussions for this is taking place 
 # 2. Where to begin
 
 - The first part of the project will be mostly Front-end Development(VueJS)
-- Take a look at the [Project Board](https://github.com/mscraftsman/devcon2020virtual/projects/1)
+- Take a look at the [Project Board](https://github.com/mscraftsman/devcon2022/projects?query=is%3Aopen)
 - It is likely there are open [issues](https://github.com/mscraftsman/devcon2020virtual/issues) that you can help with.
 
 # 3. How to contribute
