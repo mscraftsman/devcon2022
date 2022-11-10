@@ -426,7 +426,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="/funding/rogers-capital.png" alt="Rogers Capital" />
+                  <img src="/funding/rcts.png" alt="Rogers Capital" />
                 </a>
               </div>
             </div>
