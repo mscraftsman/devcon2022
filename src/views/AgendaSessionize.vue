@@ -106,11 +106,11 @@
                       <router-link
                         :class="[
                           'session__block',
-                          { disabled: programme.isServiceSession },
+                          { disabled: programme.isServiceSession }
                         ]"
                         :to="{
                           name: 'AgendaSingle',
-                          params: { id: programme.id },
+                          params: { id: programme.id }
                         }"
                       >
                         <div class="title">
@@ -134,7 +134,10 @@
                             >
                               <div
                                 class="image"
-                                v-if="speakersById[speaker.id].profilePicture"
+                                v-if="
+                                  speakersById[speaker.id] &&
+                                    speakersById[speaker.id].profilePicture
+                                "
                               >
                                 <img
                                   :src="speakersById[speaker.id].profilePicture"
@@ -159,7 +162,10 @@
                             >
                               <div
                                 class="image"
-                                v-if="speakersById[speaker.id].profilePicture"
+                                v-if="
+                                  speakersById[speaker.id] &&
+                                    speakersById[speaker.id].profilePicture
+                                "
                               >
                                 <img
                                   :src="speakersById[speaker.id].profilePicture"
@@ -247,7 +253,7 @@ export default {
         "16:00",
         "16:30",
         "17:00",
-        "17:30",
+        "17:30"
       ],
       MINUTES_TO_EIGHT_OCLOCK: 8 * 60,
       timeStart: 0,
@@ -258,23 +264,23 @@ export default {
         r22486: "Olympia",
         r22487: "Smallville",
         r22488: "Wakanda",
-        r28497: "Atlantis (UGs)",
+        r28497: "Atlantis (UGs)"
       },
       roomUrls: {
         r22486: "https://youtu.be/L2f2fb2ZBoE",
         r22487: "https://youtu.be/m4H9MakPvus",
         r22488: "https://youtu.be/wiVlUzLaiJg",
-        r28497: "https://youtu.be/boHc0HfLWSc",
+        r28497: "https://youtu.be/boHc0HfLWSc"
       },
       availableRooms: [
         { id: "r22486", index: 0 },
         { id: "r22487", index: 1 },
         { id: "r22488", index: 2 },
-        { id: "r28497", index: 3 },
+        { id: "r28497", index: 3 }
       ],
       currentDay: 0,
       currentRoom: { id: "r22486", index: 0 },
-      modal_info: {},
+      modal_info: {}
     };
   },
   methods: {
@@ -321,7 +327,7 @@ export default {
 
       return {
         top: offsetResult * (this.timeScale * 0.6) + "px",
-        height: duration * (this.timeScale * 0.6) + "px",
+        height: duration * (this.timeScale * 0.6) + "px"
       };
     },
     // Takes a programme object
@@ -377,7 +383,7 @@ export default {
 
       return {
         top: startCoordinate * (this.timeScale * 0.6) + "px",
-        height: duration * (this.timeScale * height_ratio) + "px",
+        height: duration * (this.timeScale * height_ratio) + "px"
       };
     },
     next() {
@@ -387,7 +393,7 @@ export default {
       this.changeRoom(false);
     },
     changeRoom(next) {
-      const currentIndex = this.availableRooms.findIndex((room) => {
+      const currentIndex = this.availableRooms.findIndex(room => {
         return room.id === this.currentRoom.id;
       });
       const prev = !next;
@@ -412,7 +418,7 @@ export default {
         this.currentRoom = this.availableRooms[prevIndex];
         return;
       }
-    },
+    }
   },
   computed: {
     timeEnd() {
@@ -422,7 +428,7 @@ export default {
       sessions: "getSessions",
       speakers: "getSpeakers",
       speakersById: "getSpeakersById",
-      sessionsById: "getSessionsById",
+      sessionsById: "getSessionsById"
     }),
     currentDaySessions() {
       let result = null;
@@ -439,13 +445,13 @@ export default {
         return {
           columns: ["70px", "1fr"],
           rows: ["1fr"],
-          areas: [["Time", this.currentRoom.id]],
+          areas: [["Time", this.currentRoom.id]]
         };
       }
       return {
         columns: ["80px", "1fr", "1fr", "1fr", "1fr"],
         rows: ["1fr"],
-        areas: [["Time", "r22486", "r22487", "r22488", "r28497"]],
+        areas: [["Time", "r22486", "r22487", "r22488", "r28497"]]
       };
     },
     displayedRooms() {
@@ -460,7 +466,7 @@ export default {
         return [];
       }
       if (this.isMobile) {
-        return this.currentDaySessions.filter((session) => {
+        return this.currentDaySessions.filter(session => {
           // * Keep coercion (`==` instead of `===`) here. Please.
           // * Processing `this.currentRoom` directly here to trigger reactivity.
           // * The update is not triggered when declared in a variable.
@@ -468,7 +474,7 @@ export default {
         });
       }
       return this.currentDaySessions;
-    },
+    }
   },
   mounted() {
     // this.fetchSessions();
@@ -476,7 +482,7 @@ export default {
   components: {
     CssGrid,
     CssGridItem,
-    ViewportListener,
+    ViewportListener
   },
   async created() {
     const stats = this.$store.dispatch("FETCH_STATS");
@@ -495,7 +501,7 @@ export default {
       return;
     }
     Promise.allSettled(promises);
-  },
+  }
 };
 </script>
 

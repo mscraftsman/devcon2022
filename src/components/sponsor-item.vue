@@ -29,7 +29,6 @@ export default {
       required: true,
 
       validator(value) {
-        const keys = Object.keys(value);
         const MANDATORY_FIELDS = ["level", "partner", "url", "support"];
 
         for (let key in value) {
@@ -61,7 +60,7 @@ export default {
     },
 
     getImageName(filename) {
-      const [words, _] = filename.split(".");
+      const [words] = filename.split(".");
       const noDashes = words.split("-").join("");
       return noDashes;
     }

@@ -53,8 +53,8 @@ export default {
     },
     closeModal() {
       this.$modal.hide("credits__modal");
-    },
-  },
+    }
+  }
 };
 </script>
 

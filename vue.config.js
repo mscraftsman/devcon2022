@@ -24,5 +24,14 @@ module.exports = {
       .use("svg-to-vue-component")
       .loader("svg-to-vue-component/loader");
   },
-  publicPath: process.env.NODE_ENV === "ghpages" ? "/devcon2020/" : "/"
+  css: {
+    loaderOptions: {
+      sass: {
+        sassOptions: {
+          silenceDeprecations: ["legacy-js-api", "import"]
+        }
+      }
+    }
+  },
+  publicPath: process.env.NODE_ENV === "ghpages" ? "/devcon2022/" : "/"
 };
