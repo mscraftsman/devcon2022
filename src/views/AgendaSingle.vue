@@ -19,7 +19,7 @@
         </ul>
       </div>
       <div
-        :v-if="session"
+        v-if="session"
         :class="['session__wrapper']"
         :data-room="session.roomId"
       >
@@ -30,8 +30,8 @@
             :class="[
               'author__information',
               {
-                multiple: session.speakers && session.speakers.length > 1,
-              },
+                multiple: session.speakers && session.speakers.length > 1
+              }
             ]"
           >
             <router-link
@@ -105,14 +105,14 @@ export default {
     return {
       session_id: null,
       page: {
-        title: "MSCC",
+        title: "MSCC"
       },
-      session: null,
+      session: null
     };
   },
   metaInfo() {
     return {
-      title: this.page.title,
+      title: this.page.title
     };
   },
   methods: {
@@ -123,13 +123,15 @@ export default {
       if (this.sessions.length === 0) {
         this.FETCH_SESSIONS();
       }
-      let session = this.sessionsById[this.session_id];
+      let session = this.sessionsById[id || this.session_id];
       return session;
     },
     processSession(id) {
       this.session = this.getSession(id);
 
-      this.page.title = this.session.title;
+      if (this.session) {
+        this.page.title = this.session.title;
+      }
     },
     getSocialIcon(obj) {
       if (obj.title == "LinkedIn") {
@@ -148,33 +150,32 @@ export default {
     },
     shortenify(text) {
       return text.length > 11 ? text.substring(0, 11) + ".." : text;
-    },
+    }
   },
   computed: {
     ...mapGetters({
       sessions: "getSessions",
       sessionsById: "getSessionsById",
       speakersById: "getSpeakersById",
-      speakers: "getSpeakers",
-    }),
+      speakers: "getSpeakers"
+    })
   },
   mounted() {
     this.session_id = this.$route.params.id;
 
     let sessions;
-    let speakers;
 
     if (this.sessions.length === 0) {
       sessions = this.FETCH_SESSIONS();
-      speakers = this.FETCH_SPEAKERS();
+      this.FETCH_SPEAKERS();
 
-      sessions.then((results) => {
+      sessions.then(() => {
         this.processSession(this.session_id);
       });
     } else {
       this.processSession(this.session_id);
     }
-  },
+  }
 };
 </script>
 

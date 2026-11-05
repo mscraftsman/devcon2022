@@ -47,13 +47,12 @@
 </template>
 
 <script>
-import SpeakerBox from "@/components/speaker-box.vue";
 import { mapActions, mapGetters } from "vuex";
 import { time as timeHelper, getDay as getDayHelper } from "@/helpers";
 
 export default {
   metaInfo: {
-    title: "Speakers",
+    title: "Speakers"
   },
   methods: {
     ...mapActions(["FETCH_SESSIONS", "FETCH_SPEAKERS"]),
@@ -61,25 +60,22 @@ export default {
       if (this.speakers.length === 0) {
         this.FETCH_SPEAKERS();
       }
-      let theSpeaker = this.speakers.find((speaker) => speaker.id === id);
-      return theSpeaker.profilePicture;
+      let theSpeaker = this.speakers.find(speaker => speaker.id === id);
+      return theSpeaker ? theSpeaker.profilePicture : "";
     },
     time: timeHelper,
-    getDay: getDayHelper,
+    getDay: getDayHelper
   },
   computed: {
     ...mapGetters({
       sessions: "getSessions",
-      speakers: "getSpeakers",
-    }),
+      speakers: "getSpeakers"
+    })
   },
   mounted: function() {
     this.FETCH_SESSIONS();
     this.FETCH_SPEAKERS();
-  },
-  components: {
-    SpeakerBox,
-  },
+  }
 };
 </script>
 

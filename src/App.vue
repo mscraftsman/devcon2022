@@ -20,12 +20,12 @@ import FooterComponent from "@/components/shared/FooterComponent.vue";
 export default {
   metaInfo: {
     title: "Home",
-    titleTemplate: "%s - Developers Conference 2022 | MSCC",
+    titleTemplate: "%s - Developers Conference 2022 | MSCC"
   },
   components: {
     HeaderComponent,
-    FooterComponent,
-  },
+    FooterComponent
+  }
 };
 </script>
 

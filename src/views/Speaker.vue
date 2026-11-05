@@ -80,14 +80,14 @@ export default {
     return {
       speaker_id: null,
       page: {
-        title: "MSCC",
+        title: "MSCC"
       },
-      speaker: null,
+      speaker: null
     };
   },
   metaInfo() {
     return {
-      title: this.page.title,
+      title: this.page.title
     };
   },
   methods: {
@@ -96,12 +96,14 @@ export default {
       if (this.speakers.length === 0) {
         this.FETCH_SPEAKERS();
       }
-      let theSpeaker = this.speakers.find((speaker) => speaker.id === id);
+      let theSpeaker = this.speakers.find(speaker => speaker.id === id);
       return theSpeaker;
     },
     processSpeaker(id) {
       this.speaker = this.getSpeaker(id);
-      this.page.title = this.speaker.firstName + " " + this.speaker.lastName;
+      if (this.speaker) {
+        this.page.title = this.speaker.firstName + " " + this.speaker.lastName;
+      }
     },
     getSocialIcon(obj) {
       if (obj.title == "LinkedIn") {
@@ -120,31 +122,30 @@ export default {
     },
     shortenify(text) {
       return text.length > 11 ? text.substring(0, 11) + ".." : text;
-    },
+    }
   },
   computed: {
     ...mapGetters({
       sessions: "getSessions",
-      speakers: "getSpeakers",
-    }),
+      speakers: "getSpeakers"
+    })
   },
   mounted() {
     this.speaker_id = this.$route.params.id;
 
-    let sessions;
     let speakers;
 
     if (this.speakers.length === 0) {
-      sessions = this.FETCH_SESSIONS();
+      this.FETCH_SESSIONS();
       speakers = this.FETCH_SPEAKERS();
 
-      speakers.then((results) => {
+      speakers.then(() => {
         this.processSpeaker(this.speaker_id);
       });
     } else {
       this.processSpeaker(this.speaker_id);
     }
-  },
+  }
 };
 </script>
 

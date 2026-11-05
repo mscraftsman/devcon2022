@@ -81,21 +81,21 @@ export default {
       menu_items: [
         {
           name_path: "Agenda",
-          text: "Agenda",
+          text: "Agenda"
         },
         {
           name_path: "Speakers",
-          text: "Speakers",
+          text: "Speakers"
         },
         {
           name_path: "Community",
-          text: "Community",
+          text: "Community"
         },
         {
           name_path: "Extras",
-          text: "Extras",
-        },
-      ],
+          text: "Extras"
+        }
+      ]
     };
   },
   methods: {
@@ -104,8 +104,8 @@ export default {
     },
     closeMenu() {
       this.menu = false;
-    },
-  },
+    }
+  }
 };
 </script>
 
